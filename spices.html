@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Category - NiceShop Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+</head>
+
+<body class="category-page">
+
+   <header id="header" class="header sticky-top">
+    <!-- Top Bar -->
+    <div class="top-bar py-2">
+      <div class="container-fluid container-xl">
+        <div class="row align-items-center">
+          <div class="col-lg-4 d-none d-lg-flex">
+            <div class="top-bar-item">
+              <i class="bi bi-telephone-fill me-2"></i>
+              <span>Need help? Call us: </span>
+              <a href="tel:+1234567890">+1 (234) 567-890</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12 text-center">
+            <div class="announcement-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": 1,
+                  "direction": "vertical",
+                  "effect": "slide"
+                }
+              </script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">🌏 Global shipping to 50+ countries</div>
+                <div class="swiper-slide">✅ Export quality, certified & inspected</div>
+                <div class="swiper-slide">📦 Custom packaging for bulk & retail</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <div class="d-flex justify-content-end">
+              <div class="top-bar-item dropdown me-3">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="bi bi-translate me-2"></i>EN
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>English</a></li>
+                  <li><a class="dropdown-item" href="#">Español</a></li>
+                  <li><a class="dropdown-item" href="#">Français</a></li>
+                  <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                </ul>
+              </div>
+              <div class="top-bar-item dropdown">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="bi bi-currency-dollar me-2"></i>USD
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>USD</a></li>
+                  <li><a class="dropdown-item" href="#">EUR</a></li>
+                  <li><a class="dropdown-item" href="#">GBP</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <img src="assets/img/pkpLOGO.png" alt="">
+            <!-- <h1 class="sitename">NiceShop</h1> -->
+          </a>
+
+          <!-- Search -->
+          <form class="search-form desktop-search-form">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for products">
+              <button class="btn" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Actions -->
+          <div class="header-actions d-flex align-items-center justify-content-end">
+
+            <!-- Mobile Search Toggle -->
+            <button class="header-action-btn mobile-search-toggle d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+              <i class="bi bi-search"></i>
+            </button>
+
+            <!-- Account -->
+            <div class="dropdown account-dropdown">
+              <button class="header-action-btn" data-bs-toggle="dropdown">
+                <i class="bi bi-person"></i>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">
+                  <h6>Welcome to <span class="sitename">FashionStore</span></h6>
+                  <p class="mb-0">Access account &amp; manage orders</p>
+                </div>
+                <div class="dropdown-body">
+                  <a class="dropdown-item d-flex align-items-center" >
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span>My Profile</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" >
+                    <i class="bi bi-bag-check me-2"></i>
+                    <span>My Orders</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" >
+                    <i class="bi bi-heart me-2"></i>
+                    <span>My Wishlist</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" >
+                    <i class="bi bi-gear me-2"></i>
+                    <span>Settings</span>
+                  </a>
+                </div>
+                <div class="dropdown-footer">
+                  <a class="btn btn-primary w-100 mb-2">Sign In</a>
+                  <a href="login.html" class="btn btn-outline-primary w-100">Register</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist -->
+            <a class="header-action-btn d-none d-md-block">
+              <i class="bi bi-heart"></i>
+              <span class="badge">0</span>
+            </a>
+
+            <!-- Cart -->
+            <a  class="header-action-btn">
+              <i class="bi bi-cart3"></i>
+              <span class="badge">3</span>
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="header-nav">
+      <div class="container-fluid container-xl position-relative">
+
+
+        <!-- <button id="hamburgerBtn" aria-label="Toggle Menu">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h20M4 12h20M4 18h20"/>
+  </svg>
+</button> -->
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+               <li><a href="category.html" class="active">Category</a></li>
+              <li><a href="spices.html">Spices</a></li>
+                 <li><a href="">Agro Produce</a></li>
+                 <li><a href="">Dry Fruits</a></li>
+                 <li><a href="">Handicraft</a></li>
+          
+         <!-- Products Mega Menu 1 -->
+            <li class="products-megamenu-1"><a href="#"><span>Top Organic Exports</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+              <!-- Products Mega Menu 1 Mobile View -->
+              <!-- <ul class="mobile-megamenu">
+
+                <li><a href="#">Featured Products</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Sale Items</a></li>
+
+                <li class="dropdown"><a href="#"><span>Clothing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Men's Wear</a></li>
+                    <li><a href="#">Women's Wear</a></li>
+                    <li><a href="#">Kids Collection</a></li>
+                    <li><a href="#">Sportswear</a></li>
+                    <li><a href="#">Accessories</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Electronics</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Smartphones</a></li>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Audio Devices</a></li>
+                    <li><a href="#">Smart Home</a></li>
+                    <li><a href="#">Accessories</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Home &amp; Living</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Furniture</a></li>
+                    <li><a href="#">Decor</a></li>
+                    <li><a href="#">Kitchen</a></li>
+                    <li><a href="#">Bedding</a></li>
+                    <li><a href="#">Lighting</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Beauty</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Skincare</a></li>
+                    <li><a href="#">Makeup</a></li>
+                    <li><a href="#">Haircare</a></li>
+                    <li><a href="#">Fragrances</a></li>
+                    <li><a href="#">Personal Care</a></li>
+                  </ul>
+                </li>
+
+              </ul> -->
+              <!-- End Products Mega Menu 1 Mobile View -->
+
+              <!-- Products Mega Menu 1 Desktop View -->
+              <div class="desktop-megamenu">
+
+                <div class="megamenu-tabs">
+                  <ul class="nav nav-tabs" id="productMegaMenuTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="featured-tab" data-bs-toggle="tab" data-bs-target="#featured-content-1862" type="button" aria-selected="true" role="tab">Featured</button>
+                    <!-- </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="new-tab" data-bs-toggle="tab" data-bs-target="#new-content-1862" type="button" aria-selected="false" tabindex="-1" role="tab">New Arrivals</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="sale-tab" data-bs-toggle="tab" data-bs-target="#sale-content-1862" type="button" aria-selected="false" tabindex="-1" role="tab">Sale</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="category-tab" data-bs-toggle="tab" data-bs-target="#category-content-1862" type="button" aria-selected="false" tabindex="-1" role="tab">Categories</button>
+                    </li> -->
+                  </ul>
+                </div>
+
+                <!-- Tabs Content -->
+                <div class="megamenu-content tab-content">
+
+                  <!-- Featured Tab -->
+                  <div class="tab-pane fade show active" id="featured-content-1862" role="tabpanel" aria-labelledby="featured-tab">
+                    <div class="product-grid">
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/best-seller-Turmeric.png" alt="Featured Product" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                          <h5>Premium Turmeric</h5>
+                          <p class="price">$129.99</p>
+                          <a href="#" class="btn-view">View All</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/best-selling-Green-Cardamom.png" alt="Featured Product" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                          <h5>Cardamom</h5>
+                          <p class="price">$199.99</p>
+                          <a href="#" class="btn-view">View All</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/best-seller-cumin-seeds.png" alt="Featured Product" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                          <h5>Cumin Seeds</h5>
+                          <p class="price">$89.99</p>
+                          <a href="#" class="btn-view">View All</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/best-seller-cahew.png" alt="Featured Product" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                          <h5>Cashew</h5>
+                          <p class="price">$79.99</p>
+                          <a href="#" class="btn-view">View All</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Products Mega Menu 1 Desktop View -->
+            </li><!-- End Products Mega Menu 1 -->
+
+      
+      <!-- Products Mega Menu 2 (PKP Exports — values updated only) -->
+<li class="products-megamenu-2"><a href="#"><span>Shop</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+  <!-- Products Mega Menu 2 Mobile View -->
+  <ul class="mobile-megamenu">
+    <li><a href="/products/spices">Spices & Agro Produce</a>
+      <ul>
+        <li><a href="/products/spices/turmeric">Turmeric</a></li>
+        <li><a href="/products/spices/cardamom">Cardamom</a></li>
+        <li><a href="/products/spices/cumin">Cumin</a></li>
+        <li><a href="/products/spices/cinnamon">Cinnamon</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/products/dry-fruits">Dry Fruits & Organic Products</a>
+      <ul>
+        <li><a href="/products/dry-fruits/cashew">Cashew Kernels</a></li>
+        <li><a href="/products/dry-fruits/almonds">Almonds</a></li>
+        <li><a href="/products/dry-fruits/dates">Dates</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/products/handicraft">Handicrafts & Specialty Goods</a>
+      <ul>
+        <li><a href="/products/handicraft/brass-figurines">Brass Figurines</a></li>
+        <li><a href="/products/handicraft/woodcraft">Woodcraft & Showpieces</a></li>
+        <li><a href="/products/handicraft/textiles">Textiles & Decor</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown"><a href="#"><span>Readymade Clothes</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+      <ul>
+        <li><a href="/products/garments/men">Men's Apparel (Bulk)</a></li>
+        <li><a href="/products/garments/women">Women's Apparel (Bulk)</a></li>
+        <li><a href="/products/garments/private-label">Private Label & Techpacks</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown"><a href="#"><span>Engineering Goods & Vehicle Parts</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+      <ul>
+        <li><a href="/products/engineering/auto-parts">Vehicle Parts</a></li>
+        <li><a href="/products/engineering/bearings">Bearings & Components</a></li>
+        <li><a href="/products/engineering/machine-parts">Industrial Machine Parts</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+      <ul>
+        <li><a href="/services/quality-certifications">Quality & Certifications</a></li>
+        <li><a href="/services/packaging">Packaging & Private Label</a></li>
+        <li><a href="/services/logistics">Export Logistics</a></li>
+        <li><a href="/contact">Contact Sales</a></li>
+      </ul>
+    </li>
+  </ul><!-- End Products Mega Menu 2 Mobile View -->
+
+  <!-- Products Mega Menu 2 Desktop View -->
+  <div class="desktop-megamenu">
+
+    <div class="megamenu-tabs">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="womens-tab" data-bs-toggle="tab" data-bs-target="#womens-content-1883" type="button" aria-selected="true" role="tab">CATEGORIES</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="mens-tab" data-bs-toggle="tab" data-bs-target="#mens-content-1883" type="button" aria-selected="false" tabindex="-1" role="tab">TOP SKUs</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="kids-tab" data-bs-toggle="tab" data-bs-target="#kids-content-1883" type="button" aria-selected="false" tabindex="-1" role="tab">MARKETS & CERTS</button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tabs Content -->
+    <div class="megamenu-content tab-content">
+
+      <!-- Categories Tab (keeps same container IDs) -->
+      <div class="tab-pane fade show active" id="womens-content-1883" role="tabpanel" aria-labelledby="womens-tab">
+        <div class="category-layout">
+          <div class="categories-section">
+            <div class="category-headers">
+              <h4>Spices</h4>
+              <h4>Agro Produce</h4>
+              <h4>Dry Fruits</h4>
+              <h4>Handicraft</h4>
+            </div>
+
+            <div class="category-links">
+              <div class="link-row">
+                <a href="/products/spices/turmeric">Turmeric</a>
+                <a href="/products/agro/rice">Rice & Rice Products</a>
+                <a href="/products/dry-fruits/cashew">Cashew Kernels</a>
+                <a href="/products/handicraft/brass-figurines">Brass Figurines</a>
+              </div>
+
+              <div class="link-row">
+                <a href="/products/spices/cardamom">Cardamom</a>
+                <a href="/products/agro/wheat">Wheat & Flours</a>
+                <a href="/products/dry-fruits/almond">Almonds</a>
+                <a href="/products/handicraft/woodcraft">Woodcraft</a>
+              </div>
+
+              <div class="link-row">
+                <a href="/products/spices/cumin">Cumin</a>
+                <a href="/products/agro/pulses">Pulses</a>
+                <a href="/products/dry-fruits/dates">Dates</a>
+                <a href="/products/handicraft/textiles">Textiles</a>
+              </div>
+
+              <div class="link-row">
+                <a href="/products/spices/cinnamon">Cinnamon</a>
+                <a href="/products/engineering/auto-parts">Vehicle Parts</a>
+                <a href="/products/garments/men">Readymade Clothes</a>
+                <a href="/products/engineering/machine-parts">Machine Parts</a>
+              </div>
+
+              <div class="link-row">
+                <a href="/products" class="fw-bold">View all products →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-section">
+            <div class="featured-image">
+              <img src="assets/img/product/cover-spices.jpg" alt="PKP Exports - Spices">
+              <div class="featured-content">
+                <h3>Export-ready<br>Spices & Agro</h3>
+                <a href="/contact" class="btn-shop">Request FOB Quote</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top SKUs Tab -->
+      <div class="tab-pane fade" id="mens-content-1883" role="tabpanel" aria-labelledby="mens-tab">
+        <div class="category-layout">
+          <div class="categories-section" style="flex:1;">
+            <div class="link-row mb-2 d-flex align-items-center gap-3">
+              <img src="assets/img/product/hero-top-sell-turmeric..png" alt="Turmeric" style="width:84px;height:72px;object-fit:cover;border-radius:6px;">
+              <div>
+                <a href="/products/spices/turmeric" class="fw-bold">Premium Turmeric Powder</a>
+                <div class="small text-muted">SKU: PKP-SP-001 · MOQ 500 kg · Sample $25 · Lead 7 days</div>
+              </div>
+              <div class="ms-auto"><a href="#" class="btn btn-sm btn-primary" data-sku="PKP-SP-001" aria-label="Request sample Turmeric">Request sample</a></div>
+            </div>
+
+            <div class="link-row mb-2 d-flex align-items-center gap-3">
+              <img src="assets/img/product/hero-cardamom.png" alt="Cardamom" style="width:84px;height:72px;object-fit:cover;border-radius:6px;">
+              <div>
+                <a href="/products/spices/cardamom" class="fw-bold">Green Cardamom Pods</a>
+                <div class="small text-muted">SKU: PKP-SP-002 · MOQ 200 kg · Sample $45 · Lead 10 days</div>
+              </div>
+              <div class="ms-auto"><a href="#" class="btn btn-sm btn-primary" data-sku="PKP-SP-002" aria-label="Request sample Cardamom">Request sample</a></div>
+            </div>
+
+            <div class="link-row mb-2 d-flex align-items-center gap-3">
+              <img src="assets/img/product/hero-cumin.png" alt="Cumin" style="width:84px;height:72px;object-fit:cover;border-radius:6px;">
+              <div>
+                <a href="/products/spices/cumin" class="fw-bold">Cumin Seeds — Cleaned</a>
+                <div class="small text-muted">SKU: PKP-SP-003 · MOQ 300 kg · Sample $30 · Lead 8 days</div>
+              </div>
+              <div class="ms-auto"><a href="#" class="btn btn-sm btn-primary" data-sku="PKP-SP-003" aria-label="Request sample Cumin">Request sample</a></div>
+            </div>
+          </div>
+
+          <div class="featured-section" style="width:260px;">
+            <div class="featured-image" style="padding-left:12px;">
+              <div class="mb-2 fw-bold">Quick categories</div>
+              <ul class="list-unstyled small text-muted">
+                <li><a href="/products/spices">All Spices</a></li>
+                <li><a href="/products/agro">Agro Produce</a></li>
+                <li><a href="/products/dry-fruits">Dry Fruits</a></li>
+                <li><a href="/contact">Request custom sample</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Markets & Certs Tab -->
+      <div class="tab-pane fade" id="kids-content-1883" role="tabpanel" aria-labelledby="kids-tab">
+        <div class="category-layout">
+          <div class="categories-section" style="flex:1;">
+            <h6 class="mb-2">Export markets</h6>
+            <div class="d-flex gap-3 align-items-center flex-wrap mb-3">
+              <div class="d-flex align-items-center gap-2"><img src="assets/img/product/Flag_of_Singapore.svg.png" alt="Singapore" height="18"> Singapore</div>
+              <div class="d-flex align-items-center gap-2"><img src="assets/img/product/Flag_of_the_United_States_(Web_Colors).svg.png" alt="USA" height="18"> USA</div>
+              <div class="d-flex align-items-center gap-2"><img src="assets/img/product/Flag_of_Australia.svg.png" alt="Australia" height="18"> Australia</div>
+            </div>
+
+            <h6 class="mb-2">Certifications</h6>
+            <div class="d-flex gap-3 align-items-center flex-wrap mb-3">
+              <img src="assets/img/product/FSSAI_Logo.png" alt="FSSAI" height="36">
+              <img src="assets/img/product/haccp-certification.jpg" alt="HACCP" height="36">
+              <img src="assets/img/product/iso9001_logo.jpg" alt="ISO 9001" height="36">
+              <img src="assets/img/product/fda-logo.webp" alt="FDA" height="36">
+            </div>
+
+            <div class="mt-3">
+              <a href="/" class="btn btn-sm btn-outline-dark">Request FOB Quote</a>
+              <a href="/assets/pkp-export-catalog.pdf" class="btn btn-sm btn-outline-secondary ms-2">Download Catalog</a>
+            </div>
+          </div>
+
+          <div class="featured-section" style="width:260px;">
+            <h6 class="mb-2">Why buy from PKP</h6>
+            <ul class="small text-muted">
+              <li>Traceable lots • FSSAI & HACCP</li>
+              <li>Flexible packaging & private label</li>
+              <li>Competitive FOB pricing & fast lead times</li>
+            </ul>
+            <div class="mt-3">
+              <a href="/contact" class="btn btn-sm btn-primary">Contact export sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- End Products Mega Menu 2 Desktop View -->
+
+</li><!-- End Products Mega Menu 2 -->
+
+              <li class="dropdown"><a href="#"><span>Engineering Good</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li class="dropdown"><a href="#"><span>Automotive</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                   <ul>
+                    <li><a href="#">Engine Components</a></li>
+                    <li><a href="#">Body Chasis Parts</a></li>
+                    <li><a href="#">Transmission</a></li>
+                    <li><a href="#">Steering Systems</a></li>
+                    <li><a href="#">Suspension</a></li>
+                  </ul>
+                  </li>
+                <li class="dropdown"><a href="#"><span>Iron & Steel</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Carbon Steel</a></li>
+                    <li><a href="#">Stainless Steel</a></li>
+                    <li><a href="#">Alloy Steel</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href=''>Contact</a></li>
+            <li><a href="">Blog</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Search Form -->
+    <div class="collapse" id="mobileSearch">
+      <div class="container">
+        <form class="search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for products">
+            <button class="btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </header>
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Spices</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Spices</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <!-- <div class="row">
+
+      
+
+        </div> -->
+
+        <!-- <div class="col-lg-8"> -->
+
+
+
+          <!-- Category Product List Section -->
+          <section id="category-product-list" class="category-product-list section">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in">
+                    <div class="product-image">
+                      <img src="assets/img/product/turmericImg.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/turmeric.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Spice's</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Turmeric Powder</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$129.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(42)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="product-image">
+                      <img src="assets/img/product/coriander1.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/coriander2.jpg" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <!-- <div class="product-badge new">New</div> -->
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Men's Collection</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Corainder</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$95.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.6 <span>(28)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="product-image">
+                      <img src="assets/img/product/chilly.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/chilly2.jpg" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <!-- <div class="product-badge sale">-25%</div> -->
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Accessories</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Chilly</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $75.00
+                          <span class="original-price">$99.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.9 <span>(56)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="product-image">
+                      <img src="assets/img/product/blackPepper.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/blackpepper2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                
+                      <h4 class="product-title"><a href="product-details.html">Black Pepper</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$145.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.7 <span>(35)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="product-image">
+                      <img src="assets/img/product/clove.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/clove2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Men's Fashion</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Clove</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$89.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.5 <span>(23)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="product-image">
+                      <img src="assets/img/product/curry.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/curry2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="product-details">
+                    
+                      <h4 class="product-title"><a href="product-details.html">Curry Leaves</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $110.00
+                          <span class="original-price">$129.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(47)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+             
+
+              </div>
+
+            </div>
+
+          </section><!-- /Category Product List Section -->
+
+          <!-- Category Pagination Section -->
+          <section id="category-pagination" class="category-pagination section">
+
+            <div class="container">
+              <nav class="d-flex justify-content-center" aria-label="Page navigation">
+                <ul>
+                  <li>
+                    <a href="#" aria-label="Previous page">
+                      <i class="bi bi-arrow-left"></i>
+                      <span class="d-none d-sm-inline">Previous</span>
+                    </a>
+                  </li>
+
+                  <li><a href="#" class="active">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li class="ellipsis">...</li>
+                  <li><a href="#">8</a></li>
+                  <li><a href="#">9</a></li>
+                  <li><a href="#">10</a></li>
+
+                  <li>
+                    <a href="#" aria-label="Next page">
+                      <span class="d-none d-sm-inline">Next</span>
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+          </section><!-- /Category Pagination Section -->
+
+        <!-- </div> -->
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">NiceShop</span>
+              </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.</p>
+
+              <div class="social-links mt-4">
+                <h5>Connect With Us</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                  <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Shop</h4>
+              <ul class="footer-links">
+                <li><a href="category.html">New Arrivals</a></li>
+                <li><a href="category.html">Bestsellers</a></li>
+                <li><a href="category.html">Women's Clothing</a></li>
+                <li><a href="category.html">Men's Clothing</a></li>
+                <li><a href="category.html">Accessories</a></li>
+                <li><a href="category.html">Sale</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Support</h4>
+              <ul class="footer-links">
+                <li><a href="support.html">Help Center</a></li>
+                <li><a href="account.html">Order Status</a></li>
+                <li><a href="shiping-info.html">Shipping Info</a></li>
+                <li><a href="return-policy.html">Returns &amp; Exchanges</a></li>
+                <li><a href="#">Size Guide</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <h4>Contact Information</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>123 Fashion Street, New York, NY 10001</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span>hello@example.com</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-clock"></i>
+                  <span>Monday-Friday: 9am-6pm<br>Saturday: 10am-4pm<br>Sunday: Closed</span>
+                </div>
+              </div>
+
+              <div class="app-buttons mt-4">
+                <a href="#" class="app-btn">
+                  <i class="bi bi-apple"></i>
+                  <span>App Store</span>
+                </a>
+                <a href="#" class="app-btn">
+                  <i class="bi bi-google-play"></i>
+                  <span>Google Play</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="sitename">NiceShop</strong>. All Rights Reserved.</p>
+            </div>
+            <div class="credits mt-1">
+              <!-- All the links in the footer should remain intact. -->
+              <!-- You can delete the links only if you've purchased the pro version. -->
+              <!-- Licensing information: https://bootstrapmade.com/license/ -->
+              <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              <div class="payment-methods">
+                <div class="payment-icons">
+                  <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                  <i class="bi bi-paypal" aria-label="PayPal"></i>
+                  <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                  <i class="bi bi-google" aria-label="Google Pay"></i>
+                  <i class="bi bi-shop" aria-label="Shop Pay"></i>
+                  <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+                </div>
+              </div>
+
+              <div class="legal-links">
+                <a href="tos.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tos.html">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/drift-zoom/Drift.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
