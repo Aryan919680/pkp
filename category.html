@@ -71,19 +71,7 @@
                   <div class="col-lg-4">
             <div class="d-flex justify-content-center">
               <div class="top-bar-item dropdown me-3">
-                <div id="google_translate_element"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        { pageLanguage: 'en' }, // Default language of your site
-        'google_translate_element'
-      );
-    }
-  </script>
-
-  <script type="text/javascript" 
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-  </script>
+               
                 <!-- <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                   <i class="bi bi-translate me-2"></i>EN
                 </a>
@@ -123,14 +111,15 @@
           </a>
 
           <!-- Search -->
-          <form class="search-form desktop-search-form">
+           <div class="search-form desktop-search-form">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for products">
-              <button class="btn" type="submit">
+              <input type="text" class="form-control productSearchIndex" placeholder="Search for products">
+              <button class="btn searchBtnIndex" type="submit" >
                 <i class="bi bi-search"></i>
               </button>
             </div>
-          </form>
+          </div>
+
 
           <!-- Actions -->
           <div class="header-actions d-flex align-items-center justify-content-end">
@@ -187,6 +176,36 @@
               <span class="badge">3</span>
             </a>
 
+               <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en' }, // Default language of your site
+        'google_translate_element'
+      );
+    }
+
+    function customizeGoogleTranslate() {
+			var intervalId = setInterval(function () {
+				var selectElement = document.querySelector('#google_translate_element select');
+
+				if (selectElement && selectElement.length > 0) {
+					selectElement.selectedIndex = 0; // Set English as the default language
+					selectElement.options[0].text = 'En'; // Change the text to 'En'
+
+					clearInterval(intervalId); // Stop the interval once changes are applied
+				}
+			}, 500); // Retry every 500 milliseconds until the Google Translate element is fully loaded
+		}
+
+		window.addEventListener('load', function () {
+			customizeGoogleTranslate();
+		});
+  </script>
+
+  <script type="text/javascript" 
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
             <!-- Mobile Navigation Toggle -->
             <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
 
@@ -209,7 +228,6 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="index.html" class="active">Home</a></li>
-               <li><a href="category.html" class="active">Category</a></li>
               <li><a href="spices.html">Spices</a></li>
                  <li><a href="">Agro Produce</a></li>
                  <li><a href="dry-fruits.html">Dry Fruits</a></li>
@@ -458,7 +476,7 @@
               </div>
 
               <div class="link-row">
-                <a href="/products" class="fw-bold">View all products →</a>
+                <a href="category.html" class="fw-bold">View all products →</a>
               </div>
             </div>
           </div>
@@ -596,14 +614,14 @@
     <!-- Mobile Search Form -->
     <div class="collapse" id="mobileSearch">
       <div class="container">
-        <form class="search-form">
+        <div class="search-form">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for products">
-            <button class="btn" type="submit">
-              <i class="bi bi-search"></i>
-            </button>
+             <input type="text" class="form-control productSearchIndex" placeholder="Search for products">
+              <button class="btn searchBtnIndex" type="submit" >
+                <i class="bi bi-search"></i>
+              </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
 
@@ -639,111 +657,61 @@
                 <!-- Clothing Category -->
                 <li class="category-item">
                   <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-clothing-subcategories" aria-expanded="false" aria-controls="categories-1-clothing-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Clothing</a>
+                    <a href="javascript:void(0)" class="category-link">Spices</a>
                     <span class="category-toggle">
                       <i class="bi bi-chevron-down"></i>
                       <i class="bi bi-chevron-up"></i>
                     </span>
                   </div>
                   <ul id="categories-1-clothing-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Men's Wear</a></li>
-                    <li><a href="#" class="subcategory-link">Women's Wear</a></li>
-                    <li><a href="#" class="subcategory-link">Kids' Clothing</a></li>
-                    <li><a href="#" class="subcategory-link">Accessories</a></li>
+                    <li><a href="#" class="subcategory-link">Turmeric Powder</a></li>
+                    <li><a href="#" class="subcategory-link">Corainder</a></li>
+                    <li><a href="#" class="subcategory-link">Chilly</a></li>
+                    <li><a href="#" class="subcategory-link">Black Pepper</a></li>
+                    <li><a href="#" class="subcategory-link">Clove</a></li>
+                    <li><a href="#" class="subcategory-link">Curry Leaves</a></li>
                   </ul>
                 </li>
 
                 <!-- Electronics Category -->
                 <li class="category-item">
                   <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-electronics-subcategories" aria-expanded="false" aria-controls="categories-1-electronics-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Electronics</a>
+                    <a href="javascript:void(0)" class="category-link">Agro Products</a>
                     <span class="category-toggle">
                       <i class="bi bi-chevron-down"></i>
                       <i class="bi bi-chevron-up"></i>
                     </span>
                   </div>
                   <ul id="categories-1-electronics-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Smartphones</a></li>
-                    <li><a href="#" class="subcategory-link">Laptops</a></li>
-                    <li><a href="#" class="subcategory-link">Tablets</a></li>
-                    <li><a href="#" class="subcategory-link">Accessories</a></li>
+                    <li><a href="#" class="subcategory-link">Rice</a></li>
+                    <li><a href="#" class="subcategory-link">Wheat</a></li>
+                    <li><a href="#" class="subcategory-link">Wheat Flour</a></li>
+                    <li><a href="#" class="subcategory-link">Chana Dal</a></li>
+                    <li><a href="#" class="subcategory-link">Red Lentils</a></li>
+                    <li><a href="#" class="subcategory-link">Black Gram</a></li>
                   </ul>
                 </li>
 
                 <!-- Home & Kitchen Category -->
                 <li class="category-item">
                   <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-home-subcategories" aria-expanded="false" aria-controls="categories-1-home-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Home &amp; Kitchen</a>
+                    <a href="javascript:void(0)" class="category-link">Dry Fruits</a>
                     <span class="category-toggle">
                       <i class="bi bi-chevron-down"></i>
                       <i class="bi bi-chevron-up"></i>
                     </span>
                   </div>
                   <ul id="categories-1-home-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Furniture</a></li>
-                    <li><a href="#" class="subcategory-link">Kitchen Appliances</a></li>
-                    <li><a href="#" class="subcategory-link">Home Decor</a></li>
-                    <li><a href="#" class="subcategory-link">Bedding</a></li>
+                    <li><a href="#" class="subcategory-link">Almonds</a></li>
+                    <li><a href="#" class="subcategory-link">Cashews</a></li>
+                    <li><a href="#" class="subcategory-link">Walnuts</a></li>
+                    <li><a href="#" class="subcategory-link">Dates</a></li>
+                     <li><a href="#" class="subcategory-link">Anjeer (figs)</a></li>
+                      <li><a href="#" class="subcategory-link">Raisins</a></li>
                   </ul>
                 </li>
 
-                <!-- Beauty & Personal Care Category -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-beauty-subcategories" aria-expanded="false" aria-controls="categories-1-beauty-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Beauty &amp; Personal Care</a>
-                    <span class="category-toggle">
-                      <i class="bi bi-chevron-down"></i>
-                      <i class="bi bi-chevron-up"></i>
-                    </span>
-                  </div>
-                  <ul id="categories-1-beauty-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Skincare</a></li>
-                    <li><a href="#" class="subcategory-link">Makeup</a></li>
-                    <li><a href="#" class="subcategory-link">Hair Care</a></li>
-                    <li><a href="#" class="subcategory-link">Fragrances</a></li>
-                  </ul>
-                </li>
-
-                <!-- Sports & Outdoors Category -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-sports-subcategories" aria-expanded="false" aria-controls="categories-1-sports-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Sports &amp; Outdoors</a>
-                    <span class="category-toggle">
-                      <i class="bi bi-chevron-down"></i>
-                      <i class="bi bi-chevron-up"></i>
-                    </span>
-                  </div>
-                  <ul id="categories-1-sports-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Fitness Equipment</a></li>
-                    <li><a href="#" class="subcategory-link">Outdoor Gear</a></li>
-                    <li><a href="#" class="subcategory-link">Sports Apparel</a></li>
-                    <li><a href="#" class="subcategory-link">Team Sports</a></li>
-                  </ul>
-                </li>
-
-                <!-- Books Category (no subcategories) -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header">
-                    <a href="#" class="category-link">Books</a>
-                  </div>
-                </li>
-
-                <!-- Toys & Games Category -->
-                <li class="category-item">
-                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-toys-subcategories" aria-expanded="false" aria-controls="categories-1-toys-subcategories">
-                    <a href="javascript:void(0)" class="category-link">Toys &amp; Games</a>
-                    <span class="category-toggle">
-                      <i class="bi bi-chevron-down"></i>
-                      <i class="bi bi-chevron-up"></i>
-                    </span>
-                  </div>
-                  <ul id="categories-1-toys-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
-                    <li><a href="#" class="subcategory-link">Board Games</a></li>
-                    <li><a href="#" class="subcategory-link">Puzzles</a></li>
-                    <li><a href="#" class="subcategory-link">Action Figures</a></li>
-                    <li><a href="#" class="subcategory-link">Educational Toys</a></li>
-                  </ul>
-                </li>
+               
               </ul>
 
             </div><!--/Product Categories Widget -->
@@ -784,201 +752,12 @@
                 </div>
 
                 <div class="filter-actions mt-3">
-                  <button type="button" class="btn btn-sm btn-primary w-100">Apply Filter</button>
+                  <button type="button" class="btn btn-sm btn-primary w-100" id="price-filter">Apply Filter</button>
                 </div>
               </div>
 
             </div><!--/Pricing Range Widget -->
 
-            <!-- Brand Filter Widget -->
-            <h3 class="brand-filter-widget widget-item">Filter by Brand</h3><!--/Brand Filter Widget -->
-
-            <!-- Color Filter Widget -->
-            <div class="color-filter-widget widget-item">
-
-              <h3 class="widget-title">Filter by Color</h3>
-
-              <div class="color-filter-content">
-                <div class="color-options">
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="black" id="color-black">
-                    <label class="form-check-label" for="color-black">
-                      <span class="color-swatch" style="background-color: #000000;" title="Black"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="white" id="color-white">
-                    <label class="form-check-label" for="color-white">
-                      <span class="color-swatch" style="background-color: #ffffff;" title="White"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="red" id="color-red">
-                    <label class="form-check-label" for="color-red">
-                      <span class="color-swatch" style="background-color: #e74c3c;" title="Red"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="blue" id="color-blue">
-                    <label class="form-check-label" for="color-blue">
-                      <span class="color-swatch" style="background-color: #3498db;" title="Blue"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="green" id="color-green">
-                    <label class="form-check-label" for="color-green">
-                      <span class="color-swatch" style="background-color: #2ecc71;" title="Green"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="yellow" id="color-yellow">
-                    <label class="form-check-label" for="color-yellow">
-                      <span class="color-swatch" style="background-color: #f1c40f;" title="Yellow"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="purple" id="color-purple">
-                    <label class="form-check-label" for="color-purple">
-                      <span class="color-swatch" style="background-color: #9b59b6;" title="Purple"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="orange" id="color-orange">
-                    <label class="form-check-label" for="color-orange">
-                      <span class="color-swatch" style="background-color: #e67e22;" title="Orange"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="pink" id="color-pink">
-                    <label class="form-check-label" for="color-pink">
-                      <span class="color-swatch" style="background-color: #fd79a8;" title="Pink"></span>
-                    </label>
-                  </div>
-
-                  <div class="form-check color-option">
-                    <input class="form-check-input" type="checkbox" value="brown" id="color-brown">
-                    <label class="form-check-label" for="color-brown">
-                      <span class="color-swatch" style="background-color: #795548;" title="Brown"></span>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="filter-actions mt-3">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Clear All</button>
-                  <button type="button" class="btn btn-sm btn-primary">Apply Filter</button>
-                </div>
-              </div>
-
-            </div><!--/Color Filter Widget -->
-
-            <!-- Brand Filter Widget -->
-            <div class="brand-filter-widget widget-item">
-
-              <h3 class="widget-title">Filter by Brand</h3>
-
-              <div class="brand-filter-content">
-                <div class="brand-search">
-                  <input type="text" class="form-control" placeholder="Search brands...">
-                  <i class="bi bi-search"></i>
-                </div>
-
-                <div class="brand-list">
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand1">
-                      <label class="form-check-label" for="brand1">
-                        Nike
-                        <span class="brand-count">(24)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand2">
-                      <label class="form-check-label" for="brand2">
-                        Adidas
-                        <span class="brand-count">(18)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand3">
-                      <label class="form-check-label" for="brand3">
-                        Puma
-                        <span class="brand-count">(12)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand4">
-                      <label class="form-check-label" for="brand4">
-                        Reebok
-                        <span class="brand-count">(9)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand5">
-                      <label class="form-check-label" for="brand5">
-                        Under Armour
-                        <span class="brand-count">(7)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand6">
-                      <label class="form-check-label" for="brand6">
-                        New Balance
-                        <span class="brand-count">(6)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand7">
-                      <label class="form-check-label" for="brand7">
-                        Converse
-                        <span class="brand-count">(5)</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="brand-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="brand8">
-                      <label class="form-check-label" for="brand8">
-                        Vans
-                        <span class="brand-count">(4)</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="brand-actions">
-                  <button class="btn btn-sm btn-outline-primary">Apply Filter</button>
-                  <button class="btn btn-sm btn-link">Clear All</button>
-                </div>
-              </div>
-
-            </div><!--/Brand Filter Widget -->
 
           </div>
 
@@ -995,15 +774,15 @@
               <div class="filter-container mb-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="row g-3">
                   <div class="col-12 col-md-6 col-lg-4">
-                    <div class="filter-item search-form">
-                      <label for="productSearch" class="form-label">Search Products</label>
-                      <div class="input-group">
-                        <input type="text" class="form-control" id="productSearch" placeholder="Search for products..." aria-label="Search for products">
-                        <button class="btn search-btn" type="button">
-                          <i class="bi bi-search"></i>
-                        </button>
-                      </div>
-                    </div>
+                  <div class="filter-item search-form">
+    <label for="productSearch" class="form-label">Search Products</label>
+    <div class="input-group">
+      <input type="text" class="form-control" id="productSearch" placeholder="Search for products..." aria-label="Search for products">
+      <button class="btn search-btn" type="button" id="searchBtn">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
                   </div>
 
                   <div class="col-12 col-md-6 col-lg-2">
@@ -1033,6 +812,89 @@
                     </div>
                   </div>
 
+
+                  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const products = Array.from(document.querySelectorAll(".product-card"));
+  const productList = document.getElementById("product-list");
+
+  const priceRange = document.getElementById("priceRange");
+  const sortBy = document.getElementById("sortBy");
+
+  function filterAndSortProducts() {
+    let filtered = [...products];
+
+    // --- PRICE RANGE FILTER ---
+    const priceValue = priceRange.value;
+    filtered = filtered.filter(product => {
+      const priceEl = product.querySelector(".product-price");
+      if (!priceEl) return false;
+      const price = parseFloat(priceEl.textContent.replace(/[^0-9.]/g, "")) || 0;
+
+      switch (priceValue) {
+        case "Under $25":
+          return price < 25;
+        case "$25 to $50":
+          return price >= 25 && price <= 50;
+        case "$50 to $100":
+          return price >= 50 && price <= 100;
+        case "$100 to $200":
+          return price >= 100 && price <= 200;
+        case "$200 & Above":
+          return price >= 200;
+        default:
+          return true; // All Prices
+      }
+    });
+
+    // --- SORTING ---
+    if (sortBy.value === "Price: Low to High") {
+      filtered.sort((a, b) => {
+        const priceA = parseFloat(a.querySelector(".product-price").textContent.replace(/[^0-9.]/g, "")) || 0;
+        const priceB = parseFloat(b.querySelector(".product-price").textContent.replace(/[^0-9.]/g, "")) || 0;
+        return priceA - priceB;
+      });
+    } else if (sortBy.value === "Price: High to Low") {
+      filtered.sort((a, b) => {
+        const priceA = parseFloat(a.querySelector(".product-price").textContent.replace(/[^0-9.]/g, "")) || 0;
+        const priceB = parseFloat(b.querySelector(".product-price").textContent.replace(/[^0-9.]/g, "")) || 0;
+        return priceB - priceA;
+      });
+    } else if (sortBy.value === "Newest Arrivals") {
+      // Assuming newest are at the end → reverse order
+      filtered = filtered.reverse();
+    }
+    // "Featured" and "Customer Rating" stay default unless you add rating logic
+
+    // --- RENDER PRODUCTS ---
+    productList.innerHTML = "";
+    const row = document.createElement("div");
+    row.className = "row g-4 product-page";
+
+    if (filtered.length > 0) {
+      filtered.forEach(product => {
+        const clone = product.cloneNode(true);
+        const col = document.createElement("div");
+        col.className = "col-6 col-xl-4";
+        col.appendChild(clone);
+        row.appendChild(col);
+      });
+      productList.appendChild(row);
+    } else {
+      productList.innerHTML = `<p>No products found.</p>`;
+    }
+  }
+
+  // --- EVENTS ---
+  priceRange.addEventListener("change", filterAndSortProducts);
+  sortBy.addEventListener("change", filterAndSortProducts);
+
+  // Run once at page load
+  filterAndSortProducts();
+});
+</script>
+
+
                   <div class="col-12 col-md-6 col-lg-4">
                     <div class="filter-item">
                       <label class="form-label">View</label>
@@ -1045,14 +907,7 @@
                             <i class="bi bi-list-ul"></i>
                           </button>
                         </div>
-                        <div class="items-per-page">
-                          <select class="form-select" id="itemsPerPage" aria-label="Items per page">
-                            <option value="12">12 per page</option>
-                            <option value="24">24 per page</option>
-                            <option value="48">48 per page</option>
-                            <option value="96">96 per page</option>
-                          </select>
-                        </div>
+                      
                       </div>
                     </div>
                   </div>
@@ -1061,14 +916,9 @@
                 <div class="row mt-3">
                   <div class="col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="active-filters">
-                      <span class="active-filter-label">Active Filters:</span>
+                      <span class="active-filter-label"></span>
                       <div class="filter-tags">
-                        <span class="filter-tag">
-                          Electronics <button class="filter-remove"><i class="bi bi-x"></i></button>
-                        </span>
-                        <span class="filter-tag">
-                          $50 to $100 <button class="filter-remove"><i class="bi bi-x"></i></button>
-                        </span>
+                        
                         <button class="clear-all-btn">Clear All</button>
                       </div>
                     </div>
@@ -1085,28 +935,28 @@
           <section id="category-product-list" class="category-product-list section">
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-              <div class="row g-4">
+  <div id="product-list">
+               <div class="row g-4 product-page">
                 <!-- Product 1 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in">
+                  <div class="product-card" data-aos="zoom-in"  data-category="Spices" data-subcategory="Turmeric Powder" data-price="129">
                     <div class="product-image">
-                      <img src="assets/img/product/product-f-1.webp" class="main-image img-fluid" alt="Product">
-                      <img src="assets/img/product/product-f-2.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <img src="assets/img/product/turmericImg.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/turmeric.avif" class="hover-image img-fluid" alt="Product Variant">
                       <div class="product-overlay">
                         <div class="product-actions">
                           <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
                             <i class="bi bi-eye"></i>
                           </button>
-                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
                             <i class="bi bi-cart-plus"></i>
-                          </button>
+                          </button> -->
                         </div>
                       </div>
                     </div>
                     <div class="product-details">
-                      <div class="product-category">Women's Fashion</div>
-                      <h4 class="product-title"><a href="product-details.html">Tempor Incididunt</a></h4>
+                      <!-- <div class="product-category">Spice's</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Turmeric Powder</a></h4>
                       <div class="product-meta">
                         <div class="product-price">$129.00</div>
                         <div class="product-rating">
@@ -1120,25 +970,25 @@
 
                 <!-- Product 2 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="100"  data-category="Spices" data-subcategory="Corainder" data-price="95">
                     <div class="product-image">
-                      <img src="assets/img/product/product-m-1.webp" class="main-image img-fluid" alt="Product">
-                      <img src="assets/img/product/product-m-2.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <img src="assets/img/product/coriander1.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/coriander2.jpg" class="hover-image img-fluid" alt="Product Variant">
                       <div class="product-overlay">
                         <div class="product-actions">
                           <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
                             <i class="bi bi-eye"></i>
                           </button>
-                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
                             <i class="bi bi-cart-plus"></i>
-                          </button>
+                          </button> -->
                         </div>
                       </div>
-                      <div class="product-badge new">New</div>
+                      <!-- <div class="product-badge new">New</div> -->
                     </div>
                     <div class="product-details">
-                      <div class="product-category">Men's Collection</div>
-                      <h4 class="product-title"><a href="product-details.html">Elit Consectetur</a></h4>
+                      <!-- <div class="product-category">Men's Collection</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Corainder</a></h4>
                       <div class="product-meta">
                         <div class="product-price">$95.00</div>
                         <div class="product-rating">
@@ -1152,25 +1002,25 @@
 
                 <!-- Product 3 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="200" data-category="Spices" data-subcategory="Chilly" data-price="75">
                     <div class="product-image">
-                      <img src="assets/img/product/product-f-3.webp" class="main-image img-fluid" alt="Product">
-                      <img src="assets/img/product/product-f-4.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <img src="assets/img/product/chilly.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/chilly2.jpg" class="hover-image img-fluid" alt="Product Variant">
                       <div class="product-overlay">
                         <div class="product-actions">
                           <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
                             <i class="bi bi-eye"></i>
                           </button>
-                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
                             <i class="bi bi-cart-plus"></i>
-                          </button>
+                          </button> -->
                         </div>
                       </div>
-                      <div class="product-badge sale">-25%</div>
+                      <!-- <div class="product-badge sale">-25%</div> -->
                     </div>
                     <div class="product-details">
-                      <div class="product-category">Accessories</div>
-                      <h4 class="product-title"><a href="product-details.html">Adipiscing Magna</a></h4>
+                      <!-- <div class="product-category">Accessories</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Chilly</a></h4>
                       <div class="product-meta">
                         <div class="product-price">
                           $75.00
@@ -1187,24 +1037,24 @@
 
                 <!-- Product 4 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="300" data-category="Spices" data-subcategory="Black Pepper" data-price="145">
                     <div class="product-image">
-                      <img src="assets/img/product/product-m-3.webp" class="main-image img-fluid" alt="Product">
-                      <img src="assets/img/product/product-m-4.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <img src="assets/img/product/blackPepper.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/blackpepper2.avif" class="hover-image img-fluid" alt="Product Variant">
                       <div class="product-overlay">
                         <div class="product-actions">
                           <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
                             <i class="bi bi-eye"></i>
                           </button>
-                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
                             <i class="bi bi-cart-plus"></i>
-                          </button>
+                          </button> -->
                         </div>
                       </div>
                     </div>
                     <div class="product-details">
-                      <div class="product-category">Footwear</div>
-                      <h4 class="product-title"><a href="product-details.html">Labore Dolore</a></h4>
+                
+                      <h4 class="product-title"><a href="product-details.html">Black Pepper</a></h4>
                       <div class="product-meta">
                         <div class="product-price">$145.00</div>
                         <div class="product-rating">
@@ -1218,24 +1068,24 @@
 
                 <!-- Product 5 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="400"  data-category="Spices" data-subcategory="Clove" data-price="89">
                     <div class="product-image">
-                      <img src="assets/img/product/product-f-5.webp" class="main-image img-fluid" alt="Product">
-                      <img src="assets/img/product/product-f-6.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <img src="assets/img/product/clove.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/clove2.avif" class="hover-image img-fluid" alt="Product Variant">
                       <div class="product-overlay">
                         <div class="product-actions">
                           <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
                             <i class="bi bi-eye"></i>
                           </button>
-                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
                             <i class="bi bi-cart-plus"></i>
-                          </button>
+                          </button> -->
                         </div>
                       </div>
                     </div>
                     <div class="product-details">
-                      <div class="product-category">Men's Fashion</div>
-                      <h4 class="product-title"><a href="product-details.html">Magna Aliqua</a></h4>
+                      <!-- <div class="product-category">Men's Fashion</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Clove</a></h4>
                       <div class="product-meta">
                         <div class="product-price">$89.00</div>
                         <div class="product-rating">
@@ -1249,25 +1099,221 @@
 
                 <!-- Product 6 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="500">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="500" data-category="Spices" data-subcategory="Curry Leaves" data-price="110">
                     <div class="product-image">
-                      <img src="assets/img/product/product-m-5.webp" class="main-image img-fluid" alt="Product">
-                      <img src="assets/img/product/product-m-6.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <img src="assets/img/product/curry.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/curry2.avif" class="hover-image img-fluid" alt="Product Variant">
                       <div class="product-overlay">
                         <div class="product-actions">
                           <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
                             <i class="bi bi-eye"></i>
                           </button>
-                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
                             <i class="bi bi-cart-plus"></i>
-                          </button>
+                          </button> -->
                         </div>
                       </div>
-                      <div class="product-badge sale">-15%</div>
+                     
                     </div>
                     <div class="product-details">
-                      <div class="product-category">Women's Fashion</div>
-                      <h4 class="product-title"><a href="product-details.html">Eiusmod Tempor</a></h4>
+                    
+                      <h4 class="product-title"><a href="product-details.html">Curry Leaves</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $110.00
+                          <span class="original-price">$129.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(47)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           <div class="row g-4 product-page" style="display: none;">
+                <!-- Product 1 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-category="Agro Products" data-subcategory="Rice" data-price="129">
+                    <div class="product-image">
+                      <img src="assets/img/product/rice.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/rice2.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Spice's</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Rice</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$129.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(42)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="100" data-category="Agro Products" data-subcategory="Wheat" data-price="95">
+                    <div class="product-image">
+                      <img src="assets/img/product/wheat.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/wheat.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                      <!-- <div class="product-badge new">New</div> -->
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Men's Collection</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Wheat</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$95.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.6 <span>(28)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="200" data-category="Agro Products" data-subcategory="Wheat Flour" data-price="75">
+                    <div class="product-image">
+                      <img src="assets/img/product/wheatFlour.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/wheatFlour2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                      <!-- <div class="product-badge sale">-25%</div> -->
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Accessories</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Wheat Flour</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $75.00
+                          <span class="original-price">$99.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.9 <span>(56)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="300" data-category="Agro Products" data-subcategory="Chana Dal" data-price="145">
+                    <div class="product-image">
+                      <img src="assets/img/product/chanadal.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/chanadal2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                
+                      <h4 class="product-title"><a href="product-details.html">Chana Dal</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$145.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.7 <span>(35)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="400" data-category="Agro Products" data-subcategory="Red Lentils" data-price="89">
+                    <div class="product-image">
+                      <img src="assets/img/product/redlentis.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/redlentis2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Men's Fashion</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Red Lentils</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$89.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.5 <span>(23)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="500" data-category="Agro Products" data-subcategory="Black Gram" data-price="110">
+                    <div class="product-image">
+                      <img src="assets/img/product/blackGram.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/blackGram.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="product-details">
+                    
+                      <h4 class="product-title"><a href="product-details.html">Black Gram</a></h4>
                       <div class="product-meta">
                         <div class="product-price">
                           $110.00
@@ -1282,71 +1328,209 @@
                   </div>
                 </div>
 
-                <!-- Product 7 -->
-                <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="product-image">
-                      <img src="assets/img/product/product-f-7.webp" class="main-image img-fluid" alt="Product">
-                      <img src="assets/img/product/product-f-8.webp" class="hover-image img-fluid" alt="Product Variant">
-                      <div class="product-overlay">
-                        <div class="product-actions">
-                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
-                            <i class="bi bi-eye"></i>
-                          </button>
-                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
-                            <i class="bi bi-cart-plus"></i>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-details">
-                      <div class="product-category">Accessories</div>
-                      <h4 class="product-title"><a href="product-details.html">Incididunt Labore</a></h4>
-                      <div class="product-meta">
-                        <div class="product-price">$55.00</div>
-                        <div class="product-rating">
-                          <i class="bi bi-star-fill"></i>
-                          4.6 <span>(31)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="700">
-                    <div class="product-image">
-                      <img src="assets/img/product/product-m-7.webp" class="main-image img-fluid" alt="Product">
-                      <img src="assets/img/product/product-m-8.webp" class="hover-image img-fluid" alt="Product Variant">
-                      <div class="product-overlay">
-                        <div class="product-actions">
-                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
-                            <i class="bi bi-eye"></i>
-                          </button>
-                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
-                            <i class="bi bi-cart-plus"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-badge new">New</div>
-                    </div>
-                    <div class="product-details">
-                      <div class="product-category">Men's Fashion</div>
-                      <h4 class="product-title"><a href="product-details.html">Aliqua Magna</a></h4>
-                      <div class="product-meta">
-                        <div class="product-price">$79.00</div>
-                        <div class="product-rating">
-                          <i class="bi bi-star-fill"></i>
-                          4.7 <span>(39)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+             
 
               </div>
 
+              <div class="row g-4 product-page" style="display: none;">
+                <!-- Product 1 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-category="Dry Fruits" data-subcategory="Almonds" data-price="129">
+                    <div class="product-image">
+                      <img src="assets/img/product/almonds.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/almonds2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Spice's</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Almonds</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$129.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(42)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="100" data-category="Dry Fruits" data-subcategory="Cashews" data-price="95">
+                    <div class="product-image">
+                      <img src="assets/img/product/cashew.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/cashew2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                      <!-- <div class="product-badge new">New</div> -->
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Men's Collection</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Cashews</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$95.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.6 <span>(28)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="200" data-category="Dry Fruits" data-subcategory="Walnuts" data-price="75">
+                    <div class="product-image">
+                      <img src="assets/img/product/wallnuts.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/wallnuts2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                      <!-- <div class="product-badge sale">-25%</div> -->
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Accessories</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Walnuts</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $75.00
+                          <span class="original-price">$99.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.9 <span>(56)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="300" data-category="Dry Fruits" data-subcategory="Dates" data-price="145">
+                    <div class="product-image">
+                      <img src="assets/img/product/Dates.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/dates2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                
+                      <h4 class="product-title"><a href="product-details.html">Dates</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$145.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.7 <span>(35)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="400" data-category="Dry Fruits" data-subcategory="Figs" data-price="89">
+                    <div class="product-image">
+                      <img src="assets/img/product/figs.webp" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/figs.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Men's Fashion</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Anjeer (figs)</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$89.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.5 <span>(23)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="500" data-category="Dry Fruits" data-subcategory="Raisins" data-price="110">
+                    <div class="product-image">
+                      <img src="assets/img/product/raisins.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/raisins2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="product-details">
+                    
+                      <h4 class="product-title"><a href="product-details.html">Raisins</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $110.00
+                          <span class="original-price">$129.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(47)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+             
+</div>
+              </div>
             </div>
 
           </section><!-- /Category Product List Section -->
@@ -1355,34 +1539,35 @@
           <section id="category-pagination" class="category-pagination section">
 
             <div class="container">
-              <nav class="d-flex justify-content-center" aria-label="Page navigation">
-                <ul>
-                  <li>
-                    <a href="#" aria-label="Previous page">
-                      <i class="bi bi-arrow-left"></i>
-                      <span class="d-none d-sm-inline">Previous</span>
-                    </a>
-                  </li>
-
-                  <li><a href="#" class="active">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li class="ellipsis">...</li>
-                  <li><a href="#">8</a></li>
-                  <li><a href="#">9</a></li>
-                  <li><a href="#">10</a></li>
-
-                  <li>
-                    <a href="#" aria-label="Next page">
-                      <span class="d-none d-sm-inline">Next</span>
-                      <i class="bi bi-arrow-right"></i>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+             <div class="pagination mt-4 d-flex justify-content-center">
+      <button class="page-btn prev">Prev</button>
+      <button class="page-btn active" data-page="1">1</button>
+      <button class="page-btn" data-page="2">2</button>
+      <button class="page-btn" data-page="3">3</button>
+      <button class="page-btn next">Next</button>
+    </div>
             </div>
 
           </section><!-- /Category Pagination Section -->
+          <style>
+  .pagination button {
+    margin: 0 5px;
+    padding: 8px 14px;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .pagination button.active {
+    background: #007bff;
+    color: #fff;
+  }
+  .pagination button:hover {
+    background: #007bff;
+    color: #fff;
+  }
+</style>
 
         </div>
 
@@ -1481,6 +1666,7 @@
         </div>
       </div>
     </div>
+
 
     <div class="footer-bottom">
       <div class="container">

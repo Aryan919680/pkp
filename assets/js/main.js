@@ -959,5 +959,268 @@
       faqItem.parentNode.classList.toggle('faq-active');
     });
   });
+  
+
+  const pages = document.querySelectorAll(".product-page");
+  const buttons = document.querySelectorAll(".page-btn");
+  const pagination = document.querySelector(".pagination");
+  let currentPage = 1;
+
+  function showPage(page) {
+    pages.forEach((p, i) => {
+      p.style.display = (i + 1 === page) ? "flex" : "none";
+    });
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+    document.querySelector(`.page-btn[data-page="${page}"]`)?.classList.add("active");
+
+    currentPage = page;
+  }
+
+  // Handle page buttons
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.dataset.page) {
+        showPage(parseInt(btn.dataset.page));
+      } else if (btn.classList.contains("prev") && currentPage > 1) {
+        showPage(currentPage - 1);
+      } else if (btn.classList.contains("next") && currentPage < pages.length) {
+        showPage(currentPage + 1);
+      }
+    });
+  });
+
+  // Show first page by default
+  showPage(1);
+
+  // ---- SEARCH FUNCTION ----
+  const searchInput = document.getElementById("productSearch");
+
+ function filterProducts(searchValue) {
+  const products = document.querySelectorAll(".product-card");
+  const productList = document.getElementById("product-list");
+  let found = false;
+
+  if (searchValue) {
+    // Hide pagination
+    pagination.style.display = "none";
+    pages.forEach(p => p.style.display = "none"); // hide all pages
+
+    // Clear container
+    productList.innerHTML = "";
+
+    products.forEach((product) => {
+      const titleElement = product.querySelector(".product-title a");
+      if (titleElement) {
+        const productName = titleElement.textContent.toLowerCase();
+      if (productName.includes(searchValue.toLowerCase())) {
+  const clone = product.cloneNode(true);
+ console.log(clone)
+  // Fix lazy-loaded images
+const imgs = clone.querySelectorAll("img");
+imgs.forEach(img => {
+  if (img.getAttribute("src")) {
+    img.src = img.getAttribute("src"); // keep same src
+  }
+});
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "col-6 col-xl-4"; // same as original product grid
+  wrapper.appendChild(clone);
+
+  productList.appendChild(wrapper);
+  found = true;
+
+}
+
+      }
+    });
+
+    if (!found) {
+      productList.innerHTML =
+        `<p>No products found for "<strong>${searchValue}</strong>"</p>`;
+    }
+  } else {
+    // Reset pagination view
+    pagination.style.display = "flex";
+    productList.innerHTML = "";
+    pages.forEach((p, i) => {
+      p.style.display = i === 0 ? "flex" : "none";
+      productList.appendChild(p);
+    });
+  }
+}
+
+
+  // Live search typing
+  searchInput.addEventListener("keyup", function () {
+    filterProducts(this.value.trim());
+  });
+
+  // Handle query param from index.html
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const searchValue = getQueryParam("search");
+    if (searchValue) {
+      searchInput.value = searchValue; // auto-fill search box
+      filterProducts(searchValue);
+    }
+  });
+const minRange = document.querySelector(".min-range");
+const maxRange = document.querySelector(".max-range");
+const minInput = document.querySelector(".min-price-input");
+const maxInput = document.querySelector(".max-price-input");
+const minPriceLabel = document.querySelector(".min-price");
+const maxPriceLabel = document.querySelector(".max-price");
+const applyBtn = document.getElementById("price-filter");
+
+const products = document.querySelectorAll(".product-card");
+const productList = document.getElementById("product-list");
+
+// Active filter container
+const filterTags = document.querySelector(".filter-tags");
+
+// Sync slider → input
+minRange.addEventListener("input", () => {
+  minInput.value = minRange.value;
+  minPriceLabel.textContent = `$${minRange.value}`;
+});
+
+maxRange.addEventListener("input", () => {
+  maxInput.value = maxRange.value;
+  maxPriceLabel.textContent = `$${maxRange.value}`;
+});
+
+// Sync input → slider
+minInput.addEventListener("input", () => {
+  minRange.value = minInput.value;
+  minPriceLabel.textContent = `$${minInput.value}`;
+});
+
+maxInput.addEventListener("input", () => {
+  maxRange.value = maxInput.value;
+  maxPriceLabel.textContent = `$${maxInput.value}`;
+});
+
+// Apply filter
+applyBtn.addEventListener("click", () => {
+  const min = parseInt(minInput.value) || 0;
+  const max = parseInt(maxInput.value) || 1000;
+
+  let found = false;
+
+  // clear container
+  productList.innerHTML = "";
+
+  // clear previous active filters
+  filterTags.innerHTML = "";
+
+  // create row wrapper
+  const row = document.createElement("div");
+  row.className = "row g-4 product-page";
+
+  products.forEach(product => {
+    const priceEl = product.querySelector(".product-price");
+    if (!priceEl) return;
+
+    const price = parseFloat(priceEl.textContent.replace(/[^0-9.]/g, "")) || 0;
+
+    if (price >= min && price <= max) {
+      const clone = product.cloneNode(true);
+
+      // Fix lazy-loaded image
+      const img = clone.querySelector("img");
+      if (img && img.dataset.src) {
+        img.src = img.dataset.src;
+      }
+
+      // wrap in column
+      const col = document.createElement("div");
+      col.className = "col-6 col-xl-4";
+      col.appendChild(clone);
+
+      row.appendChild(col);
+      found = true;
+    }
+  });
+
+  if (found) {
+    productList.appendChild(row);
+
+    // Add active filter tag
+    const tag = document.createElement("span");
+    tag.className = "filter-tag";
+    tag.innerHTML = `$${min} - $${max} <button class="filter-remove"><i class="bi bi-x"></i></button>`;
+
+    // Remove filter on click
+    tag.querySelector(".filter-remove").addEventListener("click", () => {
+      filterTags.innerHTML = "";
+      productList.innerHTML = "";
+      // reset full list
+      const rowReset = document.createElement("div");
+      rowReset.className = "row g-4 product-page";
+      products.forEach(product => {
+        const clone = product.cloneNode(true);
+        const img = clone.querySelector("img");
+        if (img && img.dataset.src) img.src = img.dataset.src;
+        const col = document.createElement("div");
+        col.className = "col-6 col-xl-4";
+        col.appendChild(clone);
+        rowReset.appendChild(col);
+      });
+      productList.appendChild(rowReset);
+    });
+
+    filterTags.appendChild(tag);
+
+    // Add Clear All button
+    const clearAll = document.createElement("button");
+    clearAll.className = "clear-all-btn";
+    clearAll.textContent = "Clear All";
+    clearAll.addEventListener("click", () => {
+      filterTags.innerHTML = "";
+      productList.innerHTML = "";
+      const rowReset = document.createElement("div");
+      rowReset.className = "row g-4 product-page";
+      products.forEach(product => {
+        const clone = product.cloneNode(true);
+        const img = clone.querySelector("img");
+        if (img && img.dataset.src) img.src = img.dataset.src;
+        const col = document.createElement("div");
+        col.className = "col-6 col-xl-4";
+        col.appendChild(clone);
+        rowReset.appendChild(col);
+      });
+      productList.appendChild(rowReset);
+    });
+
+    filterTags.appendChild(clearAll);
+
+  } else {
+    productList.innerHTML = `<p>No products found in range $${min} - $${max}</p>`;
+  }
+});
+
+
+
+  const searchBtnIndex = document.querySelector(".searchBtnIndex");
+const searchInputIndex = document.querySelector(".productSearchIndex");
+   console.log(searchBtnIndex, searchInputIndex);
+  searchBtnIndex.addEventListener("click", function () {
+    const query = searchInputIndex.value.trim();
+    console.log("Search query:", query); // Debugging line
+    if (query) {
+      // Redirect to category page with search param
+      window.location.href = "category.html?search=" + encodeURIComponent(query);
+    } else {
+      // If nothing typed, just go to category page
+      window.location.href = "category.html";
+    }
+  });
+
 
 })();

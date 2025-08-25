@@ -4718,6 +4718,33 @@ section,
   transition: all 0.3s ease;
 }
 
+.category-product-list .product-overlay .enquire-now-btn{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background-color: var(--contrast-color) !important;
+    color: var(--heading-color) !important;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+/* Show on hover */
+.category-product-list .product-card:hover .enquire-now-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 .category-product-list .product-actions {
   position: absolute;
   right: 1rem;
