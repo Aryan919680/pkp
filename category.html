@@ -119,7 +119,22 @@
               </button>
             </div>
           </div>
-
+<script>
+    const searchBtnIndex = document.querySelector(".searchBtnIndex");
+const searchInputIndex = document.querySelector(".productSearchIndex");
+   console.log(searchBtnIndex, searchInputIndex);
+  searchBtnIndex.addEventListener("click", function () {
+    const query = searchInputIndex.value.trim();
+    console.log("Search query:", query); // Debugging line
+    if (query) {
+      // Redirect to category page with search param
+      window.location.href = "category.html?search=" + encodeURIComponent(query);
+    } else {
+      // If nothing typed, just go to category page
+      window.location.href = "category.html";
+    }
+  });
+</script>
 
           <!-- Actions -->
           <div class="header-actions d-flex align-items-center justify-content-end">
@@ -229,7 +244,7 @@
           <ul>
             <li><a href="index.html" class="active">Home</a></li>
               <li><a href="spices.html">Spices</a></li>
-                 <li><a href="">Agro Produce</a></li>
+                 <li><a href="agro-products.html">Agro Produce</a></li>
                  <li><a href="dry-fruits.html">Dry Fruits</a></li>
                  <li><a href="">Handicraft</a></li>
           
@@ -447,40 +462,55 @@
             </div>
 
             <div class="category-links">
-              <div class="link-row">
-                <a href="/products/spices/turmeric">Turmeric</a>
-                <a href="/products/agro/rice">Rice & Rice Products</a>
-                <a href="/products/dry-fruits/cashew">Cashew Kernels</a>
-                <a href="/products/handicraft/brass-figurines">Brass Figurines</a>
-              </div>
+             <div class="link-row">
+  <a href="category.html?search=Turmeric Powder">Turmeric Powder</a>
+  <a href="category.html?search=Rice">Rice</a>
+ <a href="category.html?search=Almonds">Almonds</a>
+  <a href="category.html?search=Wood">Wood</a>
+</div>
 
-              <div class="link-row">
-                <a href="/products/spices/cardamom">Cardamom</a>
-                <a href="/products/agro/wheat">Wheat & Flours</a>
-                <a href="/products/dry-fruits/almond">Almonds</a>
-                <a href="/products/handicraft/woodcraft">Woodcraft</a>
-              </div>
+<div class="link-row">
+  <a href="category.html?product=cardamom">Cardamom</a>
+  <a href="category.html?search=Wheat">Wheat</a>
+  <a href="category.html?search=Cashews">Cashews</a>
+  <a href="category.html?product=woodcraft">Woodcraft</a>
+</div>
 
-              <div class="link-row">
-                <a href="/products/spices/cumin">Cumin</a>
-                <a href="/products/agro/pulses">Pulses</a>
-                <a href="/products/dry-fruits/dates">Dates</a>
-                <a href="/products/handicraft/textiles">Textiles</a>
-              </div>
+<div class="link-row">
+  <a href="category.html?search=Red Chilly">Red Chilly</a>
+  <a href="category.html?search=Wheat Flour">Wheat Flour</a>
+<a href="category.html?search=Walnuts">Walnuts</a>
+  <a href="category.html?product=textiles">Textiles</a>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const product = params.get("search"); // e.g. turmeric, rice, almond
 
-              <div class="link-row">
-                <a href="/products/spices/cinnamon">Cinnamon</a>
-                <a href="/products/engineering/auto-parts">Vehicle Parts</a>
-                <a href="/products/garments/men">Readymade Clothes</a>
-                <a href="/products/engineering/machine-parts">Machine Parts</a>
-              </div>
+    if (product) {
+      // put the name in the search box
+      window.location.href = "category.html?search=" + encodeURIComponent(query);
+    }
+  });
+</script>
+
 
               <div class="link-row">
                 <a href="category.html" class="fw-bold">View all products →</a>
               </div>
             </div>
           </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const product = params.get("search"); // e.g. turmeric, rice, almond
 
+    if (product) {
+      // put the name in the search box
+      window.location.href = "category.html?search=" + encodeURIComponent(query);
+    }
+  });
+</script>
           <div class="featured-section">
             <div class="featured-image">
               <img src="assets/img/product/cover-spices.jpg" alt="PKP Exports - Spices">
@@ -666,7 +696,7 @@
                   <ul id="categories-1-clothing-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
                     <li><a href="#" class="subcategory-link">Turmeric Powder</a></li>
                     <li><a href="#" class="subcategory-link">Corainder</a></li>
-                    <li><a href="#" class="subcategory-link">Chilly</a></li>
+                    <li><a href="#" class="subcategory-link">Red Chilly</a></li>
                     <li><a href="#" class="subcategory-link">Black Pepper</a></li>
                     <li><a href="#" class="subcategory-link">Clove</a></li>
                     <li><a href="#" class="subcategory-link">Curry Leaves</a></li>
@@ -689,6 +719,7 @@
                     <li><a href="#" class="subcategory-link">Chana Dal</a></li>
                     <li><a href="#" class="subcategory-link">Red Lentils</a></li>
                     <li><a href="#" class="subcategory-link">Black Gram</a></li>
+                    <li><a href="#" class="subcategory-link">Indian Gooseberry(Amla)</a></li>
                   </ul>
                 </li>
 
@@ -717,7 +748,7 @@
             </div><!--/Product Categories Widget -->
 
             <!-- Pricing Range Widget -->
-            <div class="pricing-range-widget widget-item">
+            <!-- <div class="pricing-range-widget widget-item">
 
               <h3 class="widget-title">Price Range</h3>
 
@@ -756,7 +787,9 @@
                 </div>
               </div>
 
-            </div><!--/Pricing Range Widget -->
+            </div> -->
+            <!--/Pricing Range Widget -->
+
 
 
           </div>
@@ -768,10 +801,10 @@
           <!-- Category Header Section -->
           <section id="category-header" class="category-header section">
 
-            <div class="container" data-aos="fade-up">
+            <div class="container" >
 
               <!-- Filter and Sort Options -->
-              <div class="filter-container mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="filter-container mb-4">
                 <div class="row g-3">
                   <div class="col-12 col-md-6 col-lg-4">
                   <div class="filter-item search-form">
@@ -784,8 +817,95 @@
     </div>
   </div>
                   </div>
+                  <!-- <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("productSearch");
+    const searchBtn = document.getElementById("searchBtn");
 
-                  <div class="col-12 col-md-6 col-lg-2">
+    // Select all category and subcategory links
+    const categoryLinks = document.querySelectorAll(".category-link, .subcategory-link");
+
+    categoryLinks.forEach(link => {
+      link.addEventListener("click", function (e) {
+        console.log("here")
+        e.preventDefault(); // prevent default # navigation
+
+        // Get category/subcategory text
+        const productName = this.textContent.trim();
+
+        // Set it in the search box
+        searchInput.value = productName;
+
+        // Trigger the search button click (your existing search logic will handle it)
+        searchBtn.click();
+      });
+    });
+  });
+  const searchInput = document.getElementById("productSearch");
+  console.log(searchInput)
+ function filterProducts(searchValue) {
+  const products = document.querySelectorAll(".product-card");
+  const productList = document.getElementById("product-list");
+  let found = false;
+
+  if (searchValue) {
+    // Hide pagination
+    pagination.style.display = "none";
+    pages.forEach(p => p.style.display = "none"); // hide all pages
+
+    // Clear container
+    productList.innerHTML = "";
+
+    products.forEach((product) => {
+      const titleElement = product.querySelector(".product-title a");
+      if (titleElement) {
+        const productName = titleElement.textContent.toLowerCase();
+      if (productName.includes(searchValue.toLowerCase())) {
+  const clone = product.cloneNode(true);
+ console.log(clone)
+  // Fix lazy-loaded images
+const imgs = clone.querySelectorAll("img");
+imgs.forEach(img => {
+  if (img.getAttribute("src")) {
+    img.src = img.getAttribute("src"); // keep same src
+  }
+});
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "col-6 col-xl-4"; // same as original product grid
+  wrapper.appendChild(clone);
+
+  productList.appendChild(wrapper);
+  found = true;
+
+}
+
+      }
+    });
+
+    if (!found) {
+      productList.innerHTML =
+        `<p>No products found for "<strong>${searchValue}</strong>"</p>`;
+    }
+  } else {
+    // Reset pagination view
+    pagination.style.display = "flex";
+    productList.innerHTML = "";
+    pages.forEach((p, i) => {
+      p.style.display = i === 0 ? "flex" : "none";
+      productList.appendChild(p);
+    });
+  }
+}
+
+
+  // Live search typing
+  searchInput.addEventListener("keyup", function () {
+    filterProducts(this.value.trim());
+  });
+</script> -->
+
+                  <!-- <div class="col-12 col-md-6 col-lg-2">
                     <div class="filter-item">
                       <label for="priceRange" class="form-label">Price Range</label>
                       <select class="form-select" id="priceRange">
@@ -810,10 +930,12 @@
                         <option>Newest Arrivals</option>
                       </select>
                     </div>
-                  </div>
+                  </div> -->
 
 
-                  <script>
+                  <!-- <script>
+  
+
 document.addEventListener("DOMContentLoaded", () => {
   const products = Array.from(document.querySelectorAll(".product-card"));
   const productList = document.getElementById("product-list");
@@ -892,10 +1014,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Run once at page load
   filterAndSortProducts();
 });
-</script>
+</script> -->
 
 
-                  <div class="col-12 col-md-6 col-lg-4">
+                  <!-- <div class="col-12 col-md-6 col-lg-4">
                     <div class="filter-item">
                       <label class="form-label">View</label>
                       <div class="d-flex align-items-center">
@@ -910,10 +1032,10 @@ document.addEventListener("DOMContentLoaded", () => {
                       
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
 
-                <div class="row mt-3">
+                <!-- <div class="row mt-3">
                   <div class="col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="active-filters">
                       <span class="active-filter-label"></span>
@@ -923,7 +1045,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
               </div>
 
@@ -934,12 +1056,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <!-- Category Product List Section -->
           <section id="category-product-list" class="category-product-list section">
 
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="container" >
   <div id="product-list">
                <div class="row g-4 product-page">
                 <!-- Product 1 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in"  data-category="Spices" data-subcategory="Turmeric Powder" data-price="129">
+                  <div class="product-card"  data-category="Spices" data-subcategory="Turmeric Powder" data-price="129">
                     <div class="product-image">
                       <img src="assets/img/product/turmericImg.jpg" class="main-image img-fluid" alt="Product">
                       <img src="assets/img/product/turmeric.avif" class="hover-image img-fluid" alt="Product Variant">
@@ -970,7 +1092,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <!-- Product 2 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="100"  data-category="Spices" data-subcategory="Corainder" data-price="95">
+                  <div class="product-card" data-category="Spices" data-subcategory="Corainder" data-price="95">
                     <div class="product-image">
                       <img src="assets/img/product/coriander1.jpg" class="main-image img-fluid" alt="Product">
                       <img src="assets/img/product/coriander2.jpg" class="hover-image img-fluid" alt="Product Variant">
@@ -1002,7 +1124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <!-- Product 3 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="200" data-category="Spices" data-subcategory="Chilly" data-price="75">
+                  <div class="product-card"  data-category="Spices" data-subcategory="Red Chilly" data-price="75">
                     <div class="product-image">
                       <img src="assets/img/product/chilly.jpg" class="main-image img-fluid" alt="Product">
                       <img src="assets/img/product/chilly2.jpg" class="hover-image img-fluid" alt="Product Variant">
@@ -1020,7 +1142,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <div class="product-details">
                       <!-- <div class="product-category">Accessories</div> -->
-                      <h4 class="product-title"><a href="product-details.html">Chilly</a></h4>
+                      <h4 class="product-title"><a href="product-details.html">Red Chilly</a></h4>
                       <div class="product-meta">
                         <div class="product-price">
                           $75.00
@@ -1037,7 +1159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <!-- Product 4 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="300" data-category="Spices" data-subcategory="Black Pepper" data-price="145">
+                  <div class="product-card"  data-category="Spices" data-subcategory="Black Pepper" data-price="145">
                     <div class="product-image">
                       <img src="assets/img/product/blackPepper.jpg" class="main-image img-fluid" alt="Product">
                       <img src="assets/img/product/blackpepper2.avif" class="hover-image img-fluid" alt="Product Variant">
@@ -1068,7 +1190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <!-- Product 5 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="400"  data-category="Spices" data-subcategory="Clove" data-price="89">
+                  <div class="product-card"  data-category="Spices" data-subcategory="Clove" data-price="89">
                     <div class="product-image">
                       <img src="assets/img/product/clove.avif" class="main-image img-fluid" alt="Product">
                       <img src="assets/img/product/clove2.avif" class="hover-image img-fluid" alt="Product Variant">
@@ -1099,7 +1221,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <!-- Product 6 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="500" data-category="Spices" data-subcategory="Curry Leaves" data-price="110">
+                  <div class="product-card"  data-category="Spices" data-subcategory="Curry Leaves" data-price="110">
                     <div class="product-image">
                       <img src="assets/img/product/curry.avif" class="main-image img-fluid" alt="Product">
                       <img src="assets/img/product/curry2.avif" class="hover-image img-fluid" alt="Product Variant">
@@ -1328,7 +1450,36 @@ document.addEventListener("DOMContentLoaded", () => {
                   </div>
                 </div>
 
-             
+                 <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-category="Agro Products" data-subcategory="Indian Gooseberry(Amla)" data-price="110">
+                    <div class="product-image">
+                      <img src="assets/img/product/amla.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/amla2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                             <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Spice's</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Indian Gooseberry(Amla)</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$129.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(42)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
               </div>
 

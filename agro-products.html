@@ -131,7 +131,22 @@
               </button>
             </div>
           </div>
-
+<script>
+    const searchBtnIndex = document.querySelector(".searchBtnIndex");
+const searchInputIndex = document.querySelector(".productSearchIndex");
+   console.log(searchBtnIndex, searchInputIndex);
+  searchBtnIndex.addEventListener("click", function () {
+    const query = searchInputIndex.value.trim();
+    console.log("Search query:", query); // Debugging line
+    if (query) {
+      // Redirect to category page with search param
+      window.location.href = "category.html?search=" + encodeURIComponent(query);
+    } else {
+      // If nothing typed, just go to category page
+      window.location.href = "category.html";
+    }
+  });
+</script>
 
           <!-- Actions -->
           <div class="header-actions d-flex align-items-center justify-content-end">
@@ -430,33 +445,38 @@
             </div>
 
             <div class="category-links">
-              <div class="link-row">
-                <a href="/products/spices/turmeric">Turmeric</a>
-                <a href="/products/agro/rice">Rice & Rice Products</a>
-                <a href="/products/dry-fruits/cashew">Cashew Kernels</a>
-                <a href="/products/handicraft/brass-figurines">Brass Figurines</a>
-              </div>
+             <div class="link-row">
+  <a href="category.html?search=Turmeric Powder">Turmeric Powder</a>
+  <a href="category.html?search=Rice">Rice</a>
+ <a href="category.html?search=Almonds">Almonds</a>
+  <a href="category.html?search=Wood">Wood</a>
+</div>
 
-              <div class="link-row">
-                <a href="/products/spices/cardamom">Cardamom</a>
-                <a href="/products/agro/wheat">Wheat & Flours</a>
-                <a href="/products/dry-fruits/almond">Almonds</a>
-                <a href="/products/handicraft/woodcraft">Woodcraft</a>
-              </div>
+<div class="link-row">
+  <a href="category.html?product=cardamom">Cardamom</a>
+  <a href="category.html?search=Wheat">Wheat</a>
+  <a href="category.html?search=Cashews">Cashews</a>
+  <a href="category.html?product=woodcraft">Woodcraft</a>
+</div>
 
-              <div class="link-row">
-                <a href="/products/spices/cumin">Cumin</a>
-                <a href="/products/agro/pulses">Pulses</a>
-                <a href="/products/dry-fruits/dates">Dates</a>
-                <a href="/products/handicraft/textiles">Textiles</a>
-              </div>
+<div class="link-row">
+  <a href="category.html?search=Red Chilly">Red Chilly</a>
+  <a href="category.html?search=Wheat Flour">Wheat Flour</a>
+<a href="category.html?search=Walnuts">Walnuts</a>
+  <a href="category.html?product=textiles">Textiles</a>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const product = params.get("search"); // e.g. turmeric, rice, almond
 
-              <div class="link-row">
-                <a href="/products/spices/cinnamon">Cinnamon</a>
-                <a href="/products/engineering/auto-parts">Vehicle Parts</a>
-                <a href="/products/garments/men">Readymade Clothes</a>
-                <a href="/products/engineering/machine-parts">Machine Parts</a>
-              </div>
+    if (product) {
+      // put the name in the search box
+      window.location.href = "category.html?search=" + encodeURIComponent(query);
+    }
+  });
+</script>
+
 
               <div class="link-row">
                 <a href="category.html" class="fw-bold">View all products →</a>
@@ -836,6 +856,38 @@
                         <div class="product-rating">
                           <i class="bi bi-star-fill"></i>
                           4.8 <span>(47)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                 <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in">
+                    <div class="product-image">
+                      <img src="assets/img/product/amla.avif" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/amla2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                             <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Spice's</div> -->
+                      <h4 class="product-title"><a href="product-details.html">Indian Gooseberry</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$129.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(42)</span>
                         </div>
                       </div>
                     </div>
