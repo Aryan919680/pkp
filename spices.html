@@ -1042,6 +1042,52 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
       </div>
     </div>
   </footer>
+  <div class="modal fade" id="inquiryModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">Product Inquiry Form</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="inquiryForm" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Product</label>
+            <input type="text" id="productName" class="form-control" readonly>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Full Name</label>
+            <input type="text" class="form-control" name="fullName" placeholder="Enter your full name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter your e-mail id" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Contact Number</label>
+            <input type="text" class="form-control" name="contact" placeholder="Contact Number" required>
+          </div>
+         <div class="mb-3">
+  <label class="form-label fw-semibold">Location</label>
+  <select class="form-select" name="location" id="countrySelect" required>
+    <option value="">Select your country</option>
+  </select>
+</div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Message</label>
+            <textarea class="form-control" name="message" rows="3" placeholder="Your Message"></textarea>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-warning btn-lg fw-bold rounded-pill">
+              <i class="bi bi-send-fill me-1"></i> Submit Inquiry
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -1057,7 +1103,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/drift-zoom/Drift.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
+  <script src="assets/js/index.js"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 

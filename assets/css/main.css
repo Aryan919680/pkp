@@ -12688,6 +12688,36 @@ section,
   color: var(--default-color);
 }
 
+#inquiryForm .form-control {
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 15px;
+}
+
+/* Better textarea */
+#inquiryForm textarea {
+  resize: none;
+}
+
+/* Modal background fade */
+.modal-content {
+  border-radius: 20px;
+}
+
+/* Button hover effect */
+.btn-warning:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+  transition: 0.2s ease-in-out;
+}
+
+#countrySelect {
+  border-radius: 12px;
+  padding: 12px;
+}
+
+
+
 @media (max-width: 575.98px) {
   .color-filter-widget .color-filter-content .color-options {
     justify-content: center;
