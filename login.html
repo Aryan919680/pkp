@@ -818,6 +818,114 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
       </div>
 
     </section><!-- /Login Section -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup, 
+           createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+           from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyBasQrh2jvxH71w4g41UFuX5LL7Le7aIK4",
+    authDomain: "myauthapp-00.firebaseapp.com",
+    projectId: "myauthapp-00",
+    storageBucket: "myauthapp-00.firebasestorage.app",
+    messagingSenderId: "164825381102",
+    appId: "1:164825381102:web:79abef5dfe7512cd7b1bff"
+  };
+
+  // Init Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
+
+  // ✅ Allowed single account email
+  const ALLOWED_EMAIL = "pkpglobalexport@gmail.com";
+
+  // Register form submit
+  const registerForm = document.querySelector('.register-form .auth-form-content');
+  if (registerForm) {
+    registerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = registerForm.querySelector('input[type="email"]').value;
+      const password = registerForm.querySelector('input[placeholder="Create password"]').value;
+
+      if (email !== ALLOWED_EMAIL) {
+        alert("This account is not allowed to register.");
+        return;
+      }
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          alert(`Account created! Welcome ${user.email}`);
+          registerForm.reset();
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    });
+  }
+
+  // Login form submit
+  const loginForm = document.querySelector('.login-form .auth-form-content');
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = loginForm.querySelector('input[type="email"]').value;
+      const password = loginForm.querySelector('input[type="password"]').value;
+
+      if (email !== ALLOWED_EMAIL) {
+        alert("Only the authorized account can log in.");
+        return;
+      }
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          alert(`Logged in! Welcome ${user.email}`);
+          loginForm.reset();
+          window.location.href = "dashboard.html";
+        })
+
+        .catch((error) => {
+          alert(error.message);
+        });
+    });
+  }
+
+  // Google login buttons
+  const googleButtons = document.querySelectorAll('.social-btn');
+  googleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      signInWithPopup(auth, googleProvider)
+        .then((result) => {
+          const user = result.user;
+
+          if (user.email !== ALLOWED_EMAIL) {
+            alert("Only the authorized account can log in.");
+            auth.signOut(); // force logout if it's another account
+            return;
+          }
+window.location.href = "dashboard.html";
+          alert(`Welcome ${user.displayName}`);
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    });
+  });
+
+  // Switch between login & register forms
+  const switchBtns = document.querySelectorAll('.switch-btn');
+  switchBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      document.querySelector('.login-form').classList.toggle('active', target === 'login');
+      document.querySelector('.register-form').classList.toggle('active', target === 'register');
+    });
+  });
+</script>
 
   </main>
 

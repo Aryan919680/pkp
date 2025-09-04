@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PKP Admin Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fa;
+    }
+    header {
+      background: #0f5132;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card h2 {
+      margin: 0 0 1rem;
+      font-size: 1.2rem;
+      color: #0f5132;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 220px;
+      border-radius: 8px;
+    }
+    a.btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #0f5132;
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    a.btn:hover { background: #0c3e26; }
+    .stats p {
+      margin: 0.3rem 0;
+      font-size: 1rem;
+    }
+    .stats strong {
+      color: #0f5132;
+    }
+  </style>
+</head>
+<body>
+  <header>PKP Admin Dashboard</header>
+
+<!-- Welcome / Summary Card (copy-paste) -->
+<div class="welcome-card" role="region" aria-label="Admin welcome summary" data-last-sync="2025-09-03T09:12:00+05:30" 
+     data-enquiries="5" data-products="2" data-drafts="1">
+  <div class="wc-left">
+    <div class="wc-header">
+      <div class="avatar" aria-hidden="true">A</div>
+      <div>
+        <div id="wc-greeting" class="greeting">Good afternoon, Admin 👋</div>
+        <div class="sub">Here's what's happening across enquiries, products & blog today</div>
+      </div>
+    </div>
+
+    <ul class="wc-stats" aria-hidden="false">
+      <li><strong id="stat-enq">5</strong><span>New enquiries</span></li>
+      <li><strong id="stat-prod">2</strong><span>Products updated</span></li>
+      <li><strong id="stat-draft">1</strong><span>Draft pending</span></li>
+    </ul>
+
+    <div class="wc-meta">
+      <div class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 1v11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><small id="wc-timezone">Asia/Kolkata</small></div>
+      <div class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12v7a1 1 0 01-1 1H4a1 1 0 01-1-1v-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10l5 3 5-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><small id="wc-last-sync">Last sync: —</small></div>
+    </div>
+  </div>
+
+  <div class="wc-right" aria-hidden="false">
+    <div class="actions">
+      <button class="btn btn-outline" id="btn-review">View Enquiries</button>
+      <button class="btn btn-primary" id="btn-sync">Sync to CRM</button>
+    </div>
+    <div class="wc-note">Lightweight — Sheets + Zoho + Blogger. No DB required.</div>
+  </div>
+</div>
+
+<style>
+  :root{
+    --green-700:#0f5132;
+    --green-600:#0f6b4d;
+    --accent:#198754;
+    --muted:#6b7280;
+    --card-bg: #ffffff;
+    --glass: rgba(15,81,50,0.06);
+    --radius:14px;
+    --shadow: 0 8px 28px rgba(12, 40, 24, 0.12);
+  }
+
+  .welcome-card{
+    max-width:1100px;
+    margin: 1.5rem auto;
+    background: linear-gradient(135deg, rgba(15,81,50,0.04), rgba(15,81,50,0.02));
+    border-radius:var(--radius);
+    padding:18px;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(15,81,50,0.06);
+  }
+
+  .wc-left{flex:1;min-width:0}
+  .wc-right{width:260px;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+
+  .wc-header{display:flex;gap:14px;align-items:center}
+  .avatar{
+    width:64px;height:64px;border-radius:12px;
+    background:linear-gradient(180deg,var(--green-700),var(--accent));
+    color:#fff;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(15,81,50,0.18);
+  }
+
+  .greeting{font-size:18px;font-weight:700;color:var(--green-700)}
+  .sub{font-size:13px;color:var(--muted);margin-top:3px}
+
+  .wc-stats{display:flex;gap:14px;list-style:none;padding:14px 0;margin:10px 0 8px}
+  .wc-stats li{background:var(--card-bg);border-radius:10px;padding:10px 14px;min-width:120px;display:flex;flex-direction:column;align-items:flex-start;box-shadow:0 4px 16px rgba(8,20,12,0.04);border:1px solid rgba(15,81,50,0.04)}
+  .wc-stats strong{font-size:18px;color:var(--green-700);display:block}
+  .wc-stats span{font-size:13px;color:var(--muted);margin-top:4px}
+
+  .wc-meta{display:flex;gap:12px;align-items:center;margin-top:6px}
+  .meta-item{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:13px;background:var(--glass);padding:8px 10px;border-radius:10px}
+  .meta-icon{width:18px;height:18px;color:var(--green-700);opacity:0.95}
+
+  .actions{display:flex;gap:10px;width:100%}
+  .btn{border-radius:10px;padding:10px 12px;font-weight:600;border:1px solid transparent;cursor:pointer}
+  .btn-outline{background:white;border:1px solid rgba(15,81,50,0.09);color:var(--green-700)}
+  .btn-primary{background:linear-gradient(180deg,var(--green-700),var(--accent));color:white;box-shadow:0 6px 18px rgba(15,81,50,0.16)}
+
+  .wc-note{font-size:13px;color:var(--muted);text-align:right}
+
+  /* responsive */
+  @media (max-width:880px){
+    .welcome-card{flex-direction:column;align-items:stretch;padding:14px}
+    .wc-right{width:100%;align-items:stretch}
+    .actions{justify-content:flex-start}
+    .wc-note{text-align:left}
+  }
+</style>
+
+<script>
+  // small script: dynamic greeting + populate stats & last-sync from data-* attributes
+  (function(){
+    const card = document.querySelector('.welcome-card');
+    if(!card) return;
+
+    // greeting by local hour
+    const greetingEl = document.getElementById('wc-greeting');
+    const hour = new Date().getHours();
+    let greet = 'Hello';
+    if(hour < 12) greet = 'Good morning';
+    else if(hour < 17) greet = 'Good afternoon';
+    else greet = 'Good evening';
+    greetingEl.textContent = `${greet}, Admin 👋`;
+
+    // populate stats
+    const enq = card.dataset.enquiries || '—';
+    const prod = card.dataset.products || '—';
+    const drafts = card.dataset.drafts || '—';
+    document.getElementById('stat-enq').textContent = enq;
+    document.getElementById('stat-prod').textContent = prod;
+    document.getElementById('stat-draft').textContent = drafts;
+
+    // timezone display (detect & fallback)
+    const tzEl = document.getElementById('wc-timezone');
+    try { tzEl.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Kolkata'; }
+    catch(e){ tzEl.textContent = 'Asia/Kolkata'; }
+
+    // last sync: read data-last-sync or show friendly fallback
+    const lastSyncRaw = card.dataset.lastSync;
+    const lastSyncEl = document.getElementById('wc-last-sync');
+    if(lastSyncRaw){
+      const d = new Date(lastSyncRaw);
+      lastSyncEl.textContent = 'Last sync: ' + d.toLocaleString();
+    } else {
+      lastSyncEl.textContent = 'Last sync: —';
+    }
+
+    // example: wire up quick actions (these should be implemented server-side or as links)
+    document.getElementById('btn-review').addEventListener('click', ()=> {
+      // prefer opening your enquiries page or Sheet
+      window.open('https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit', '_blank');
+    });
+    document.getElementById('btn-sync').addEventListener('click', ()=> {
+      // placeholder UX: you should call your Apps Script / serverless endpoint
+      const orig = document.getElementById('btn-sync');
+      orig.disabled = true; orig.textContent = 'Syncing…';
+      // simulate network
+      setTimeout(()=>{ orig.textContent = 'Synced ✓'; orig.disabled = false; }, 1200);
+    });
+  })();
+</script>
+
+
+  <div class="container">
+    <!-- Enquiries -->
+    <div class="card">
+      <h2>Enquiries</h2>
+      <iframe src="https://docs.google.com/spreadsheets/d/e/YOUR-SHEET-ID/pubhtml?widget=true&amp;headers=false"></iframe>
+      <a href="https://crm.zoho.com/" class="btn" target="_blank">Go to Sheets</a>
+    </div>
+
+    <!-- Blog -->
+    <div class="card">
+      <h2>Blog / Insights</h2>
+      <p>Write or edit posts on Google Blogger.</p>
+      <a href="https://www.blogger.com/" class="btn" target="_blank">Go to Blogger</a>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="card stats">
+      <h2>Quick Stats</h2>
+      <p><strong>10</strong> Enquiries This Week</p>
+      <p><strong>3</strong> Blog Posts Published</p>
+      <p><strong>5</strong> Products Listed</p>
+    </div>
+  </div>
+</body>
+</html>
