@@ -52,4 +52,39 @@ countries.forEach(country => {
   countrySelect.appendChild(option);
 });
 
+const scriptURL = "https://script.google.com/macros/s/AKfycbxZGCHv2bb9blEs3IxHvlKjX9VojSg2st0qIZ70rx8ep55bxd8SETHbkJQPBMqekpT_aQ/exec";
+
+document.getElementById("inquiryForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    productName: document.getElementById("productName").value,
+    fullName: this.fullName.value,
+    email: this.email.value,
+    contact: this.contact.value,
+    location: this.location.value,
+    message: this.message.value
+  };
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(res => res.json())
+  .then(response => {
+    alert("✅ Inquiry submitted successfully!");
+    this.reset();
+    const modal = bootstrap.Modal.getInstance(document.getElementById('inquiryModal'));
+    modal.hide();
+  })
+  .catch(error => {
+    alert("❌ Something went wrong, please try again!");
+    console.error(error);
+  });
+});
+
+
 }());
