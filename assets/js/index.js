@@ -69,7 +69,7 @@ document.getElementById("inquiryForm").addEventListener("submit", function(e) {
 
 
 
-  fetch("http://localhost:3000/submit", {
+  fetch("https://pkp-backend.onrender.com/submit", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(data),
