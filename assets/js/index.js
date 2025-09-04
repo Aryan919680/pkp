@@ -66,24 +66,26 @@ document.getElementById("inquiryForm").addEventListener("submit", function(e) {
     message: this.message.value
   };
 
-  fetch(scriptURL, {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-  .then(res => res.json())
-  .then(response => {
-    alert("✅ Inquiry submitted successfully!");
-    this.reset();
-    const modal = bootstrap.Modal.getInstance(document.getElementById('inquiryModal'));
-    modal.hide();
-  })
-  .catch(error => {
-    alert("❌ Something went wrong, please try again!");
-    console.error(error);
-  });
+
+
+
+  fetch("http://localhost:3000/submit", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data),
+})
+.then(res => res.json())
+    .then(result => {
+      if (result.success) {
+        alert("Inquiry submitted successfully!");
+        this.reset();
+        bootstrap.Modal.getInstance(document.getElementById("inquiryModal")).hide();
+      } else {
+        alert("Error: " + (result.error || "Unknown error"));
+      }
+    })
+    .catch(console.error);
+
 });
 
 
