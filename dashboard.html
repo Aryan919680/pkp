@@ -236,15 +236,59 @@
     <div class="card">
       <h2>Blog / Insights</h2>
       <p>Write or edit posts on Google Blogger.</p>
-      <a href="https://www.blogger.com/" class="btn" target="_blank">Go to Blogger</a>
+ <button ><a href="blogs.html"> Go to blogger</a> </button>
     </div>
 
     <!-- Quick Stats -->
     <div class="card stats">
       <h2>Quick Stats</h2>
-      <p><strong>10</strong> Enquiries This Week</p>
-      <p><strong>3</strong> Blog Posts Published</p>
+  <p><strong id="stat-enquiries">—</strong> Enquiries This Week</p>
+  <p><strong id="stat-blogs">—</strong> Blog Posts Published</p>
       <p><strong>5</strong> Products Listed</p>
+
+      <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+  // ✅ Same Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyAk7A6uU8jxO_tVFD4Z9sunNoCW9KNcqD0",
+    authDomain: "pkp-global.firebaseapp.com",
+    projectId: "pkp-global",
+    storageBucket: "pkp-global.firebasestorage.app",
+    messagingSenderId: "111734452310",
+    appId: "1:111734452310:web:d9a087aa5899bcc96b4bf7",
+    measurementId: "G-K599S5T7XR"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // ✅ Fetch Blog Count
+  async function fetchBlogs() {
+    try {
+      const querySnapshot = await getDocs(collection(db, "blogs"));
+      const blogsCount = querySnapshot.size;
+      document.getElementById("stat-blogs").textContent = blogsCount;
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+      document.getElementById("stat-blogs").textContent = "0";
+    }
+  }
+
+
+ 
+async function fetchEnquiries() {
+  const res = await fetch("https://pkp-backend.onrender.com/api/enquiries");
+  const data = await res.json();
+  document.getElementById("stat-enquiries").textContent = data.length || 0;
+}
+fetchEnquiries();
+
+  fetchBlogs();
+  // fetchEnquiries();
+</script>
+
     </div>
   </div>
 </body>

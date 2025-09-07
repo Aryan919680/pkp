@@ -825,13 +825,14 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
            from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
   // Firebase config
-  const firebaseConfig = {
-    apiKey: "AIzaSyBasQrh2jvxH71w4g41UFuX5LL7Le7aIK4",
-    authDomain: "myauthapp-00.firebaseapp.com",
-    projectId: "myauthapp-00",
-    storageBucket: "myauthapp-00.firebasestorage.app",
-    messagingSenderId: "164825381102",
-    appId: "1:164825381102:web:79abef5dfe7512cd7b1bff"
+ const firebaseConfig = {
+    apiKey: "AIzaSyAk7A6uU8jxO_tVFD4Z9sunNoCW9KNcqD0",
+    authDomain: "pkp-global.firebaseapp.com",
+    projectId: "pkp-global",
+    storageBucket: "pkp-global.firebasestorage.app",
+    messagingSenderId: "111734452310",
+    appId: "1:111734452310:web:d9a087aa5899bcc96b4bf7",
+    measurementId: "G-K599S5T7XR"
   };
 
   // Init Firebase
@@ -897,11 +898,23 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
   // Google login buttons
   const googleButtons = document.querySelectorAll('.social-btn');
   googleButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click',  () => {
       signInWithPopup(auth, googleProvider)
         .then((result) => {
-          const user = result.user;
+       
 
+
+       const user = result.user;
+
+        // Blogger Access Token
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const accessToken = credential.accessToken;
+
+        console.log("✅ Logged in as:", user.email);
+        console.log("🔑 Blogger Access Token:", accessToken);
+
+        // Save token (for dashboard use)
+        localStorage.setItem("bloggerToken", accessToken);
           if (user.email !== ALLOWED_EMAIL) {
             alert("Only the authorized account can log in.");
             auth.signOut(); // force logout if it's another account
