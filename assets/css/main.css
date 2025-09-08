@@ -24,6 +24,7 @@
   --accent-color: #0E5835; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -1391,7 +1392,7 @@ h6 {
   .navmenu .products-megamenu-2 .megamenu-content .featured-section .featured-image .featured-content .btn-shop {
     display: inline-block;
     padding: 8px 20px;
-    background-color: var(--accent-color);
+    background-color: black;
     color: var(--contrast-color);
     border-radius: 4px;
     font-size: 14px;
@@ -2026,7 +2027,7 @@ section,
 }
 
 .hero .hero-content .hero-actions .btn-primary {
-  background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), #000 20%) 100%);
+  background: linear-gradient(135deg, var(--heading-color) 0%, color-mix(in srgb, var(--heading-color), #000 20%) 100%);
   color: var(--contrast-color);
   border: none;
   box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 70%);
@@ -2044,8 +2045,8 @@ section,
 }
 
 .hero .hero-content .hero-actions .btn-secondary:hover {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
+  background: var(--heading-color);
+  border-color: var(--heading-color);
   color: var(--contrast-color);
   transform: translateY(-3px);
 }
