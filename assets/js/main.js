@@ -979,6 +979,21 @@ document.querySelectorAll(".category-link, .subcategory-link").forEach(link => {
   });
 });
 
+  document.querySelectorAll('.enquire-now-btn').forEach(button => {
+  button.addEventListener('click', function () {
+    const productTitle = this.closest('.product-card')
+                             .querySelector('.product-title a')
+                             .textContent.trim();
+
+    // Set product name
+    document.getElementById('productName').value = productTitle;
+   
+    // Show modal using Bootstrap
+    const inquiryModal = new bootstrap.Modal(document.getElementById('inquiryModal'));
+    inquiryModal.show();
+    console.log("test")
+  });
+});
                   
   const pages = document.querySelectorAll(".product-page");
   const buttons = document.querySelectorAll(".page-btn");
@@ -1035,9 +1050,13 @@ document.querySelectorAll(".category-link, .subcategory-link").forEach(link => {
         const productName = titleElement.textContent.toLowerCase();
         console.log(productName,"aryan")
       if (productName.includes(searchValue.toLowerCase())) {
-        
+         
   const clone = product.cloneNode(true);
  console.log(clone)
+   const btn = clone.querySelector(".enquire-now-btn");
+          if (btn) {
+            btn.dataset.product = titleElement.textContent.trim();
+          }
   // Fix lazy-loaded images
 const imgs = clone.querySelectorAll("img");
 imgs.forEach(img => {
@@ -1093,144 +1112,6 @@ imgs.forEach(img => {
       filterProducts(searchValue);
     }
   });
-// const minRange = document.querySelector(".min-range");
-// const maxRange = document.querySelector(".max-range");
-// const minInput = document.querySelector(".min-price-input");
-// const maxInput = document.querySelector(".max-price-input");
-// const minPriceLabel = document.querySelector(".min-price");
-// const maxPriceLabel = document.querySelector(".max-price");
-// const applyBtn = document.getElementById("price-filter");
-
-// const products = document.querySelectorAll(".product-card");
-// const productList = document.getElementById("product-list");
-
-// // Active filter container
-// const filterTags = document.querySelector(".filter-tags");
-
-// // Sync slider → input
-// minRange.addEventListener("input", () => {
-//   minInput.value = minRange.value;
-//   minPriceLabel.textContent = `$${minRange.value}`;
-// });
-
-// maxRange.addEventListener("input", () => {
-//   maxInput.value = maxRange.value;
-//   maxPriceLabel.textContent = `$${maxRange.value}`;
-// });
-
-// // Sync input → slider
-// minInput.addEventListener("input", () => {
-//   minRange.value = minInput.value;
-//   minPriceLabel.textContent = `$${minInput.value}`;
-// });
-
-// maxInput.addEventListener("input", () => {
-//   maxRange.value = maxInput.value;
-//   maxPriceLabel.textContent = `$${maxInput.value}`;
-// });
-
-// // Apply filter
-// applyBtn.addEventListener("click", () => {
-//   const min = parseInt(minInput.value) || 0;
-//   const max = parseInt(maxInput.value) || 1000;
-
-//   let found = false;
-
-//   // clear container
-//   productList.innerHTML = "";
-
-//   // clear previous active filters
-//   filterTags.innerHTML = "";
-
-//   // create row wrapper
-//   const row = document.createElement("div");
-//   row.className = "row g-4 product-page";
-
-//   products.forEach(product => {
-//     const priceEl = product.querySelector(".product-price");
-//     if (!priceEl) return;
-
-//     const price = parseFloat(priceEl.textContent.replace(/[^0-9.]/g, "")) || 0;
-
-//     if (price >= min && price <= max) {
-//       const clone = product.cloneNode(true);
-
-//       // Fix lazy-loaded image
-//       const img = clone.querySelector("img");
-//       if (img && img.dataset.src) {
-//         img.src = img.dataset.src;
-//       }
-
-//       // wrap in column
-//       const col = document.createElement("div");
-//       col.className = "col-6 col-xl-4";
-//       col.appendChild(clone);
-
-//       row.appendChild(col);
-//       found = true;
-//     }
-//   });
-
-//   if (found) {
-//     productList.appendChild(row);
-
-//     // Add active filter tag
-//     const tag = document.createElement("span");
-//     tag.className = "filter-tag";
-//     tag.innerHTML = `$${min} - $${max} <button class="filter-remove"><i class="bi bi-x"></i></button>`;
-
-//     // Remove filter on click
-//     tag.querySelector(".filter-remove").addEventListener("click", () => {
-//       filterTags.innerHTML = "";
-//       productList.innerHTML = "";
-//       // reset full list
-//       const rowReset = document.createElement("div");
-//       rowReset.className = "row g-4 product-page";
-//       products.forEach(product => {
-//         const clone = product.cloneNode(true);
-//         const img = clone.querySelector("img");
-//         if (img && img.dataset.src) img.src = img.dataset.src;
-//         const col = document.createElement("div");
-//         col.className = "col-6 col-xl-4";
-//         col.appendChild(clone);
-//         rowReset.appendChild(col);
-//       });
-//       productList.appendChild(rowReset);
-//     });
-
-//     filterTags.appendChild(tag);
-
-//     // Add Clear All button
-//     const clearAll = document.createElement("button");
-//     clearAll.className = "clear-all-btn";
-//     clearAll.textContent = "Clear All";
-//     clearAll.addEventListener("click", () => {
-//       filterTags.innerHTML = "";
-//       productList.innerHTML = "";
-//       const rowReset = document.createElement("div");
-//       rowReset.className = "row g-4 product-page";
-//       products.forEach(product => {
-//         const clone = product.cloneNode(true);
-//         const img = clone.querySelector("img");
-//         if (img && img.dataset.src) img.src = img.dataset.src;
-//         const col = document.createElement("div");
-//         col.className = "col-6 col-xl-4";
-//         col.appendChild(clone);
-//         rowReset.appendChild(col);
-//       });
-//       productList.appendChild(rowReset);
-//     });
-
-//     filterTags.appendChild(clearAll);
-
-//   } else {
-//     productList.innerHTML = `<p>No products found in range $${min} - $${max}</p>`;
-//   }
-// });
-
-
-//   console.log("Here")
-
 
 
 })();

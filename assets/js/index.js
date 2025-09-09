@@ -1,20 +1,21 @@
 (function() {
   "use strict";
 
-  document.querySelectorAll('.enquire-now-btn').forEach(button => {
-  button.addEventListener('click', function () {
-    const productTitle = this.closest('.product-card')
-                             .querySelector('.product-title a')
-                             .textContent.trim();
+//   document.querySelectorAll('.enquire-now-btn').forEach(button => {
+//   button.addEventListener('click', function () {
+//     const productTitle = this.closest('.product-card')
+//                              .querySelector('.product-title a')
+//                              .textContent.trim();
 
-    // Set product name
-    document.getElementById('productName').value = productTitle;
-
-    // Show modal using Bootstrap
-    const inquiryModal = new bootstrap.Modal(document.getElementById('inquiryModal'));
-    inquiryModal.show();
-  });
-});
+//     // Set product name
+//     document.getElementById('productName').value = productTitle;
+   
+//     // Show modal using Bootstrap
+//     const inquiryModal = new bootstrap.Modal(document.getElementById('inquiryModal'));
+//     inquiryModal.show();
+//     console.log("test")
+//   });
+// });
 
   document.querySelectorAll('.request-sample').forEach(button => {
     console.log("here")
@@ -69,10 +70,11 @@ countries.forEach(country => {
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbxZGCHv2bb9blEs3IxHvlKjX9VojSg2st0qIZ70rx8ep55bxd8SETHbkJQPBMqekpT_aQ/exec";
 
-document.getElementById("inquiryForm").addEventListener("submit", function(e) {
+document.getElementById("inquiryFormButton").addEventListener("click", function(e) {
   e.preventDefault();
 
   const data = {
+    sheetName: "enquiry form",
     productName: document.getElementById("productName").value,
     fullName: this.fullName.value,
     email: this.email.value,
@@ -84,7 +86,7 @@ document.getElementById("inquiryForm").addEventListener("submit", function(e) {
 
 
 
-  fetch("https://pkp-backend.onrender.com/submit", {
+  fetch("http://localhost:3000/submit", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(data),
@@ -102,6 +104,8 @@ document.getElementById("inquiryForm").addEventListener("submit", function(e) {
     .catch(console.error);
 
 });
+
+
 
 
 }());
