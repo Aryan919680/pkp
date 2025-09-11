@@ -1681,23 +1681,23 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
         <form id="requestForm" class="needs-validation" novalidate>
           <div class="mb-3">
             <label class="form-label fw-semibold">Product</label>
-            <input type="text" id="productName" class="form-control" placeholder="Product Name" required>
+            <input type="text" id="requestProductName" class="form-control" placeholder="Product Name" required>
           </div>
           <div class="mb-3">
             <label class="form-label fw-semibold">Full Name</label>
-            <input type="text" class="form-control" name="fullName" placeholder="Enter your full name" required>
+            <input type="text" class="form-control" name="requestFullName" placeholder="Enter your full name" required>
           </div>
           <div class="mb-3">
             <label class="form-label fw-semibold">Email</label>
-            <input type="email" class="form-control" name="email" placeholder="Enter your e-mail id" required>
+            <input type="email" class="form-control" name="requestEmail" placeholder="Enter your e-mail id" required>
           </div>
           <div class="mb-3">
             <label class="form-label fw-semibold">Contact Number</label>
-            <input type="text" class="form-control" name="contact" placeholder="Contact Number" required>
+            <input type="text" class="form-control" name="requestContact" placeholder="Contact Number" required>
           </div>
          <div class="mb-3">
   <label class="form-label fw-semibold">Location</label>
-  <select class="form-select" name="location" id="countrySelect" required>
+  <select class="form-select" name="requestLocation" id="countrySelect" required>
     <option value="">Select your country</option>
   </select>
 </div>
@@ -1709,7 +1709,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
 
           <div class="mb-3">
             <label class="form-label fw-semibold">Message</label>
-            <textarea class="form-control" name="message" rows="3" placeholder="Your Message"></textarea>
+            <textarea class="form-control" name="requestMessage" rows="3" placeholder="Your Message"></textarea>
           </div>
           <div class="d-grid">
             <button class="btn btn-warning btn-lg fw-bold rounded-pill" id="submitRequestBtn" type="button">
@@ -1733,12 +1733,12 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
 
   const data = {
     sheetName: "request sample form",
-    productName: form.querySelector("#productName").value,
-    fullName: form.querySelector("[name='fullName']").value,
-    email: form.querySelector("[name='email']").value,
-    contact: form.querySelector("[name='contact']").value,
-    location: form.querySelector("[name='location']").value,
-    message: form.querySelector("[name='message']").value,
+    productName: form.querySelector("#requestProductName").value,
+    fullName: form.querySelector("[name='requestFullName']").value,
+    email: form.querySelector("[name='requestEmail']").value,
+    contact: form.querySelector("[name='requestContact']").value,
+    location: form.querySelector("[name='requestLocation']").value,
+    message: form.querySelector("[name='requestMessage']").value,
     quantity: form.querySelector("[name='quantity']").value
   };
 

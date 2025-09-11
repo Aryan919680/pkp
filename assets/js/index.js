@@ -1,37 +1,63 @@
 (function() {
   "use strict";
+document.addEventListener('DOMContentLoaded', () => {
+  // Inquiry Modal
+  const inquiryModalEl = document.getElementById('inquiryModal');
+  if (inquiryModalEl) {
+    const inquiryModal = new bootstrap.Modal(inquiryModalEl);
 
-  document.querySelectorAll('.enquire-now-btn').forEach(button => {
-  button.addEventListener('click', function () {
-    const productTitle = this.closest('.product-card')
-                             .querySelector('.product-title a')
-                             .textContent.trim();
+    inquiryModalEl.addEventListener('hidden.bs.modal', () => {
+      document.getElementById('inquiryForm')?.reset();
+    });
 
-    // Set product name
-    document.getElementById('productName').value = productTitle;
-   
-    // Show modal using Bootstrap
-    const inquiryModal = new bootstrap.Modal(document.getElementById('inquiryModal'));
-    inquiryModal.show();
-    console.log("test")
-  });
+    document.querySelectorAll('.enquire-now-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const productTitle = btn.closest('.product-card')
+                               .querySelector('.product-title a')
+                               .textContent.trim();
+        document.getElementById('inquiryProductName').value = productTitle;
+
+        // Hide any open modal before showing this one
+        document.querySelectorAll('.modal.show').forEach(openEl => {
+          if (openEl !== inquiryModalEl) {
+            bootstrap.Modal.getInstance(openEl)?.hide();
+          }
+        });
+
+        inquiryModal.show();
+      });
+    });
+  }
+
+  // Request Modal
+  const requestModalEl = document.getElementById('requestModal');
+  if (requestModalEl) {
+    const requestModal = new bootstrap.Modal(requestModalEl);
+
+    requestModalEl.addEventListener('hidden.bs.modal', () => {
+      document.getElementById('requestForm')?.reset();
+    });
+
+    document.querySelectorAll('.request-now-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const productTitle = btn.closest('.product-card')
+                               .querySelector('.product-title a')
+                               .textContent.trim();
+        document.getElementById('requestProductName').value = productTitle;
+
+        // Hide any open modal before showing this one
+        document.querySelectorAll('.modal.show').forEach(openEl => {
+          if (openEl !== requestModalEl) {
+            bootstrap.Modal.getInstance(openEl)?.hide();
+          }
+        });
+
+        requestModal.show();
+      });
+    });
+  }
 });
 
-  document.querySelectorAll('.request-sample').forEach(button => {
-    console.log("here")
-  button.addEventListener('click', function () {
-    // const productTitle = this.closest('.product-card')
-    //                          .querySelector('.product-title a')
-    //                          .textContent.trim();
-
-    // // Set product name
-    // document.getElementById('productName').value = productTitle;
-
-    // Show modal using Bootstrap
-    const inquiryModal = new bootstrap.Modal(document.getElementById('requestModal'));
-    inquiryModal.show();
-  });
-});
   const countries = [
   "Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia","Australia","Austria","Azerbaijan",
   "Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi",
