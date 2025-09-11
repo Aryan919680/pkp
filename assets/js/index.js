@@ -1,21 +1,21 @@
 (function() {
   "use strict";
 
-//   document.querySelectorAll('.enquire-now-btn').forEach(button => {
-//   button.addEventListener('click', function () {
-//     const productTitle = this.closest('.product-card')
-//                              .querySelector('.product-title a')
-//                              .textContent.trim();
+  document.querySelectorAll('.enquire-now-btn').forEach(button => {
+  button.addEventListener('click', function () {
+    const productTitle = this.closest('.product-card')
+                             .querySelector('.product-title a')
+                             .textContent.trim();
 
-//     // Set product name
-//     document.getElementById('productName').value = productTitle;
+    // Set product name
+    document.getElementById('productName').value = productTitle;
    
-//     // Show modal using Bootstrap
-//     const inquiryModal = new bootstrap.Modal(document.getElementById('inquiryModal'));
-//     inquiryModal.show();
-//     console.log("test")
-//   });
-// });
+    // Show modal using Bootstrap
+    const inquiryModal = new bootstrap.Modal(document.getElementById('inquiryModal'));
+    inquiryModal.show();
+    console.log("test")
+  });
+});
 
   document.querySelectorAll('.request-sample').forEach(button => {
     console.log("here")
@@ -72,21 +72,22 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbxZGCHv2bb9blEs3IxHvl
 
 document.getElementById("inquiryFormButton").addEventListener("click", function(e) {
   e.preventDefault();
-
+const form = document.getElementById("inquiryForm");
+console.log(form)
   const data = {
     sheetName: "enquiry form",
     productName: document.getElementById("productName").value,
-    fullName: this.fullName.value,
-    email: this.email.value,
-    contact: this.contact.value,
-    location: this.location.value,
-    message: this.message.value
+    fullName: form.querySelector("[name='fullName']").value,
+    email: form.querySelector("[name='email']").value,
+    contact: form.querySelector("[name='contact']").value,
+    location: form.querySelector("[name='location']").value,
+    message: form.querySelector("[name='message']").value,
   };
 
 
 
 
-  fetch("http://localhost:3000/submit", {
+  fetch("https://pkp-backend.onrender.com/submit", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(data),

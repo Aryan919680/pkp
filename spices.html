@@ -34,7 +34,7 @@
 
 <body class="category-page">
 
-   <header id="header" class="header sticky-top">
+  <header id="header" class="header sticky-top">
     <!-- Top Bar -->
     <div class="top-bar py-2">
       <div class="container-fluid container-xl">
@@ -68,45 +68,6 @@
               </div>
             </div>
           </div>
-
-                 <div class="col-lg-4">
-            <div class="d-flex justify-content-center">
-              <div class="top-bar-item dropdown me-3">
-                <div id="google_translate_element"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        { pageLanguage: 'en' }, // Default language of your site
-        'google_translate_element'
-      );
-    }
-  </script>
-
-  <script type="text/javascript" 
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-  </script>
-                <!-- <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                  <i class="bi bi-translate me-2"></i>EN
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>English</a></li>
-                  <li><a class="dropdown-item" href="#">Español</a></li>
-                  <li><a class="dropdown-item" href="#">Français</a></li>
-                  <li><a class="dropdown-item" href="#">Deutsch</a></li>
-                </ul> -->
-              </div>
-              <!-- <div class="top-bar-item dropdown">
-                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                  <i class="bi bi-currency-dollar me-2"></i>USD
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>USD</a></li>
-                  <li><a class="dropdown-item" href="#">EUR</a></li>
-                  <li><a class="dropdown-item" href="#">GBP</a></li>
-                </ul>
-              </div> -->
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -124,7 +85,7 @@
           </a>
 
           <!-- Search -->
-         <div class="search-form desktop-search-form">
+          <div class="search-form desktop-search-form">
             <div class="input-group">
               <input type="text" class="form-control productSearchIndex" placeholder="Search for products">
               <button class="btn searchBtnIndex" type="submit" >
@@ -132,6 +93,8 @@
               </button>
             </div>
           </div>
+
+
 <script>
     const searchBtnIndex = document.querySelector(".searchBtnIndex");
 const searchInputIndex = document.querySelector(".productSearchIndex");
@@ -148,7 +111,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
     }
   });
 </script>
-
+          
           <!-- Actions -->
           <div class="header-actions d-flex align-items-center justify-content-end">
 
@@ -164,7 +127,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
               </button>
               <div class="dropdown-menu">
                 <div class="dropdown-header">
-                  <h6>Welcome to <span class="sitename">FashionStore</span></h6>
+                  <h6>Welcome to <span class="sitename">PKP Exports</span></h6>
                   <p class="mb-0">Access account &amp; manage orders</p>
                 </div>
                 <div class="dropdown-body">
@@ -172,38 +135,67 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                     <i class="bi bi-person-circle me-2"></i>
                     <span>My Profile</span>
                   </a>
-                  <a class="dropdown-item d-flex align-items-center" >
+                  <!-- <a class="dropdown-item d-flex align-items-center" >
                     <i class="bi bi-bag-check me-2"></i>
                     <span>My Orders</span>
                   </a>
                   <a class="dropdown-item d-flex align-items-center" >
                     <i class="bi bi-heart me-2"></i>
                     <span>My Wishlist</span>
-                  </a>
+                  </a> -->
                   <a class="dropdown-item d-flex align-items-center" >
                     <i class="bi bi-gear me-2"></i>
                     <span>Settings</span>
                   </a>
                 </div>
                 <div class="dropdown-footer">
-                  <a class="btn btn-primary w-100 mb-2">Sign In</a>
-                  <a href="login.html" class="btn btn-outline-primary w-100">Register</a>
+                  <a href="login.html" class="btn btn-primary w-100 mb-2">Sign In</a>
                 </div>
               </div>
             </div>
 
             <!-- Wishlist -->
-            <a class="header-action-btn d-none d-md-block">
+            <!-- <a class="header-action-btn d-none d-md-block">
               <i class="bi bi-heart"></i>
               <span class="badge">0</span>
-            </a>
+            </a> -->
 
             <!-- Cart -->
-            <a  class="header-action-btn">
+            <!-- <a  class="header-action-btn">
               <i class="bi bi-cart3"></i>
               <span class="badge">3</span>
-            </a>
+            </a> -->
 
+   <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en' }, // Default language of your site
+        'google_translate_element'
+      );
+    }
+
+    function customizeGoogleTranslate() {
+			var intervalId = setInterval(function () {
+				var selectElement = document.querySelector('#google_translate_element select');
+
+				if (selectElement && selectElement.length > 0) {
+					selectElement.selectedIndex = 0; // Set English as the default language
+					selectElement.options[0].text = 'En'; // Change the text to 'En'
+
+					clearInterval(intervalId); // Stop the interval once changes are applied
+				}
+			}, 500); // Retry every 500 milliseconds until the Google Translate element is fully loaded
+		}
+
+		window.addEventListener('load', function () {
+			customizeGoogleTranslate();
+		});
+  </script>
+
+  <script type="text/javascript" 
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
             <!-- Mobile Navigation Toggle -->
             <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
 
@@ -212,95 +204,32 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
       </div>
     </div>
 
+            
+
     <!-- Navigation -->
     <div class="header-nav">
       <div class="container-fluid container-xl position-relative">
-
-
-        <!-- <button id="hamburgerBtn" aria-label="Toggle Menu">
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h20M4 12h20M4 18h20"/>
-  </svg>
-</button> -->
-
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="index.html" class="active">Home</a></li>
+               <!-- <li><a href="category.html" class="active">Category</a></li> -->
               <li><a href="spices.html">Spices</a></li>
                  <li><a href="agro-products.html">Agro Produce</a></li>
                  <li><a href="dry-fruits.html">Dry Fruits</a></li>
+                            <li><a href="rice.html">Rice</a></li>
+                            <li><a href="health.html">Health Products</a></li>
                  <li><a href="">Handicraft</a></li>
           
          <!-- Products Mega Menu 1 -->
             <li class="products-megamenu-1"><a href="#"><span>Top Organic Exports</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 
-              <!-- Products Mega Menu 1 Mobile View -->
-              <!-- <ul class="mobile-megamenu">
-
-                <li><a href="#">Featured Products</a></li>
-                <li><a href="#">New Arrivals</a></li>
-                <li><a href="#">Sale Items</a></li>
-
-                <li class="dropdown"><a href="#"><span>Clothing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Men's Wear</a></li>
-                    <li><a href="#">Women's Wear</a></li>
-                    <li><a href="#">Kids Collection</a></li>
-                    <li><a href="#">Sportswear</a></li>
-                    <li><a href="#">Accessories</a></li>
-                  </ul>
-                </li>
-
-                <li class="dropdown"><a href="#"><span>Electronics</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Smartphones</a></li>
-                    <li><a href="#">Laptops</a></li>
-                    <li><a href="#">Audio Devices</a></li>
-                    <li><a href="#">Smart Home</a></li>
-                    <li><a href="#">Accessories</a></li>
-                  </ul>
-                </li>
-
-                <li class="dropdown"><a href="#"><span>Home &amp; Living</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Furniture</a></li>
-                    <li><a href="#">Decor</a></li>
-                    <li><a href="#">Kitchen</a></li>
-                    <li><a href="#">Bedding</a></li>
-                    <li><a href="#">Lighting</a></li>
-                  </ul>
-                </li>
-
-                <li class="dropdown"><a href="#"><span>Beauty</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Skincare</a></li>
-                    <li><a href="#">Makeup</a></li>
-                    <li><a href="#">Haircare</a></li>
-                    <li><a href="#">Fragrances</a></li>
-                    <li><a href="#">Personal Care</a></li>
-                  </ul>
-                </li>
-
-              </ul> -->
-              <!-- End Products Mega Menu 1 Mobile View -->
-
-              <!-- Products Mega Menu 1 Desktop View -->
               <div class="desktop-megamenu">
 
                 <div class="megamenu-tabs">
                   <ul class="nav nav-tabs" id="productMegaMenuTabs" role="tablist">
                     <li class="nav-item" role="presentation">
                       <button class="nav-link active" id="featured-tab" data-bs-toggle="tab" data-bs-target="#featured-content-1862" type="button" aria-selected="true" role="tab">Featured</button>
-                    <!-- </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="new-tab" data-bs-toggle="tab" data-bs-target="#new-content-1862" type="button" aria-selected="false" tabindex="-1" role="tab">New Arrivals</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="sale-tab" data-bs-toggle="tab" data-bs-target="#sale-content-1862" type="button" aria-selected="false" tabindex="-1" role="tab">Sale</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="category-tab" data-bs-toggle="tab" data-bs-target="#category-content-1862" type="button" aria-selected="false" tabindex="-1" role="tab">Categories</button>
-                    </li> -->
+                
                   </ul>
                 </div>
 
@@ -489,7 +418,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
               <img src="assets/img/product/cover-spices.jpg" alt="PKP Exports - Spices">
               <div class="featured-content">
                 <h3>Export-ready<br>Spices & Agro</h3>
-                <a href="/contact" class="btn-shop">Request FOB Quote</a>
+                <a href="/" class="btn-shop">Request FOB Quote</a>
               </div>
             </div>
           </div>
@@ -506,7 +435,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                 <a href="/products/spices/turmeric" class="fw-bold">Premium Turmeric Powder</a>
                 <div class="small text-muted">SKU: PKP-SP-001 · MOQ 500 kg · Sample $25 · Lead 7 days</div>
               </div>
-              <div class="ms-auto"><a href="#" class="btn btn-sm btn-primary" data-sku="PKP-SP-001" aria-label="Request sample Turmeric">Request sample</a></div>
+              <div class="ms-auto"><a href="" class="btn btn-sm btn-primary request-sample" style="background: black; border: black;" data-sku="PKP-SP-001" aria-label="Request sample Turmeric" >Request sample</a></div>
             </div>
 
             <div class="link-row mb-2 d-flex align-items-center gap-3">
@@ -515,30 +444,30 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                 <a href="/products/spices/cardamom" class="fw-bold">Green Cardamom Pods</a>
                 <div class="small text-muted">SKU: PKP-SP-002 · MOQ 200 kg · Sample $45 · Lead 10 days</div>
               </div>
-              <div class="ms-auto"><a href="#" class="btn btn-sm btn-primary" data-sku="PKP-SP-002" aria-label="Request sample Cardamom">Request sample</a></div>
+              <div class="ms-auto"><a href="" class="btn btn-sm btn-primary request-sample" style="background: black; border: black;" data-sku="PKP-SP-002" aria-label="Request sample Cardamom">Request sample</a></div>
             </div>
 
             <div class="link-row mb-2 d-flex align-items-center gap-3">
-              <img src="assets/img/product/hero-cumin.png" alt="Cumin" style="width:84px;height:72px;object-fit:cover;border-radius:6px;">
+              <img src="assets/img/product/best-seller-cumin-seeds.png" alt="Cumin" style="width:84px;height:72px;object-fit:cover;border-radius:6px;">
               <div>
                 <a href="/products/spices/cumin" class="fw-bold">Cumin Seeds — Cleaned</a>
                 <div class="small text-muted">SKU: PKP-SP-003 · MOQ 300 kg · Sample $30 · Lead 8 days</div>
               </div>
-              <div class="ms-auto"><a href="#" class="btn btn-sm btn-primary" data-sku="PKP-SP-003" aria-label="Request sample Cumin">Request sample</a></div>
+              <div class="ms-auto"><a href="" class="btn btn-sm btn-primary request-sample" style="background: black; border: black;" data-sku="PKP-SP-003" aria-label="Request sample Cumin">Request sample</a></div>
             </div>
           </div>
 
-          <div class="featured-section" style="width:260px;">
+          <!-- <div class="featured-section" style="width:260px;">
             <div class="featured-image" style="padding-left:12px;">
               <div class="mb-2 fw-bold">Quick categories</div>
               <ul class="list-unstyled small text-muted">
-                <li><a href="/products/spices">All Spices</a></li>
-                <li><a href="/products/agro">Agro Produce</a></li>
-                <li><a href="/products/dry-fruits">Dry Fruits</a></li>
+                <li><a href="spices.html">All Spices</a></li>
+                <li><a href="agro-products.html">Agro Produce</a></li>
+                <li><a href="dry-fruits.html">Dry Fruits</a></li>
                 <li><a href="/contact">Request custom sample</a></li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -562,8 +491,8 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
             </div>
 
             <div class="mt-3">
-              <a href="/" class="btn btn-sm btn-outline-dark">Request FOB Quote</a>
-              <a href="/assets/pkp-export-catalog.pdf" class="btn btn-sm btn-outline-secondary ms-2">Download Catalog</a>
+              <a href="/" class="btn btn-sm btn-outline-dark" style="background: black; border: black; width: 200px; margin-bottom: 5px;">Request FOB Quote</a>
+              <a href="/assets/pkp-export-catalog.pdf" class="btn btn-sm btn-outline-secondary" style="background: black; border: black; width: 200px;">Download Catalog</a>
             </div>
           </div>
 
@@ -575,7 +504,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
               <li>Competitive FOB pricing & fast lead times</li>
             </ul>
             <div class="mt-3">
-              <a href="/contact" class="btn btn-sm btn-primary">Contact export sales</a>
+              <a href="/contact" class="btn btn-sm btn-primary" style="background: black; border: black; width: 200px;">Contact export sales</a>
             </div>
           </div>
         </div>
@@ -608,7 +537,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
               </ul>
             </li>
             <li><a href=''>Contact</a></li>
-            <li><a href="">Blog</a></li>
+            <li><a href="showBlogs.html">Blog</a></li>
           </ul>
         </nav>
       </div>
@@ -619,10 +548,11 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
       <div class="container">
         <div class="search-form">
           <div class="input-group">
-           <input type="text" class="form-control productSearchIndex" placeholder="Search for products">
+            <input type="text" class="form-control productSearchIndex" placeholder="Search for products">
               <button class="btn searchBtnIndex" type="submit" >
                 <i class="bi bi-search"></i>
               </button>
+            </button>
           </div>
         </div>
       </div>
@@ -645,21 +575,9 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
     </div><!-- End Page Title -->
 
     <div class="container">
-      <!-- <div class="row">
-
-      
-
-        </div> -->
-
-        <!-- <div class="col-lg-8"> -->
-
-
-
-          <!-- Category Product List Section -->
+     
           <section id="category-product-list" class="category-product-list section">
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+            <div class="container" >
               <div class="row g-4">
                 <!-- Product 1 -->
                 <div class="col-6 col-xl-4">
@@ -681,7 +599,37 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                     </div>
                     <div class="product-details">
                       <!-- <div class="product-category">Spice's</div> -->
-                      <h4 class="product-title"><a href="product-details.html">Turmeric Powder</a></h4>
+                      <h4 class="product-title"><a href="">TURMERIC POWDER</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$129.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(42)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+ <div class="col-6 col-xl-4">
+                  <div class="product-card" >
+                    <div class="product-image">
+                      <img src="assets/img/product/turmericImg.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/turmeric.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                         <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Spice's</div> -->
+                      <h4 class="product-title"><a href="">TURMERICE WHOLE</a></h4>
                       <div class="product-meta">
                         <div class="product-price">$129.00</div>
                         <div class="product-rating">
@@ -695,7 +643,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
 
                 <!-- Product 2 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="product-card" >
                     <div class="product-image">
                       <img src="assets/img/product/coriander1.jpg" class="main-image img-fluid" alt="Product">
                       <img src="assets/img/product/coriander2.jpg" class="hover-image img-fluid" alt="Product Variant">
@@ -714,7 +662,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                     </div>
                     <div class="product-details">
                       <!-- <div class="product-category">Men's Collection</div> -->
-                      <h4 class="product-title"><a href="product-details.html">Corainder</a></h4>
+                      <h4 class="product-title"><a href="">CORAINDER WHOLE</a></h4>
                       <div class="product-meta">
                         <div class="product-price">$95.00</div>
                         <div class="product-rating">
@@ -725,10 +673,40 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                     </div>
                   </div>
                 </div>
-
+ <div class="col-6 col-xl-4">
+                  <div class="product-card" >
+                    <div class="product-image">
+                      <img src="assets/img/product/coriander1.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/coriander2.jpg" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                        <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                      <!-- <div class="product-badge new">New</div> -->
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Men's Collection</div> -->
+                      <h4 class="product-title"><a href="">CORAINDER POWDER</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$95.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.6 <span>(28)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <!-- Product 3 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="product-card">
                     <div class="product-image">
                       <img src="assets/img/product/chilly.jpg" class="main-image img-fluid" alt="Product">
                       <img src="assets/img/product/chilly2.jpg" class="hover-image img-fluid" alt="Product Variant">
@@ -747,7 +725,41 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                     </div>
                     <div class="product-details">
                       <!-- <div class="product-category">Accessories</div> -->
-                      <h4 class="product-title"><a href="product-details.html">Red Chilly</a></h4>
+                      <h4 class="product-title"><a href="">RED CHILLY POWDER</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $75.00
+                          <span class="original-price">$99.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.9 <span>(56)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 <div class="col-6 col-xl-4">
+                  <div class="product-card" >
+                    <div class="product-image">
+                      <img src="assets/img/product/chilly.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/chilly2.jpg" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                         <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                      <!-- <div class="product-badge sale">-25%</div> -->
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Accessories</div> -->
+                      <h4 class="product-title"><a href="">RED CHILLY TEJA WHOLE</a></h4>
                       <div class="product-meta">
                         <div class="product-price">
                           $75.00
@@ -764,7 +776,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
 
                 <!-- Product 4 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="product-card">
                     <div class="product-image">
                       <img src="assets/img/product/blackPepper.jpg" class="main-image img-fluid" alt="Product">
                       <img src="assets/img/product/blackpepper2.avif" class="hover-image img-fluid" alt="Product Variant">
@@ -782,7 +794,37 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                     </div>
                     <div class="product-details">
                 
-                      <h4 class="product-title"><a href="product-details.html">Black Pepper</a></h4>
+                      <h4 class="product-title"><a href="">BLACK PIPER WHOLE</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$145.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.7 <span>(35)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-xl-4">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img src="assets/img/product/blackPepper.jpg" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/blackpepper2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                          <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                
+                      <h4 class="product-title"><a href="">BLACK PIPER POWDER</a></h4>
                       <div class="product-meta">
                         <div class="product-price">$145.00</div>
                         <div class="product-rating">
@@ -794,12 +836,12 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                   </div>
                 </div>
 
-                <!-- Product 5 -->
-                <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="400">
+
+                 <div class="col-6 col-xl-4">
+                  <div class="product-card">
                     <div class="product-image">
-                      <img src="assets/img/product/clove.avif" class="main-image img-fluid" alt="Product">
-                      <img src="assets/img/product/clove2.avif" class="hover-image img-fluid" alt="Product Variant">
+                      <img src="assets/img/product/CARDAMOMGREENWHOLE1.webp" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/CARDAMOMGREENWHOLE2.webp" class="hover-image img-fluid" alt="Product Variant">
                       <div class="product-overlay">
                         <div class="product-actions">
                           <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
@@ -814,7 +856,102 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                     </div>
                     <div class="product-details">
                       <!-- <div class="product-category">Men's Fashion</div> -->
-                      <h4 class="product-title"><a href="product-details.html">Clove</a></h4>
+                      <h4 class="product-title"><a href="">CARDAMOM GREEN WHOLE</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$89.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.5 <span>(23)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="col-6 col-xl-4">
+                  <div class="product-card" >
+                    <div class="product-image">
+                      <img src="assets/img/product/CARDAMOMGREENWHOLE1.webp" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/CARDAMOMGREENWHOLE2.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                          <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Men's Fashion</div> -->
+                      <h4 class="product-title"><a href="">BIG CARDAMOM</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$89.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.5 <span>(23)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+   <div class="col-6 col-xl-4">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img src="assets/img/product/cinamon1.webp" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/cinamon2.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                          <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Men's Fashion</div> -->
+                      <h4 class="product-title"><a href="">CINAMOM WHOLE FORM</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$89.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.5 <span>(23)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <!-- Product 5 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img src="assets/img/product/cinamon1.webp" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/cinamon2.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                          <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <!-- <div class="product-category">Men's Fashion</div> -->
+                      <h4 class="product-title"><a href="">CINAMOM POWDER FORM</a></h4>
                       <div class="product-meta">
                         <div class="product-price">$89.00</div>
                         <div class="product-rating">
@@ -828,7 +965,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
 
                 <!-- Product 6 -->
                 <div class="col-6 col-xl-4">
-                  <div class="product-card" data-aos="zoom-in" data-aos-delay="500">
+                  <div class="product-card">
                     <div class="product-image">
                       <img src="assets/img/product/curry.avif" class="main-image img-fluid" alt="Product">
                       <img src="assets/img/product/curry2.avif" class="hover-image img-fluid" alt="Product Variant">
@@ -847,7 +984,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                     </div>
                     <div class="product-details">
                     
-                      <h4 class="product-title"><a href="product-details.html">Curry Leaves</a></h4>
+                      <h4 class="product-title"><a href="">KASHMIRI CHILLY IN POWDER FORM</a></h4>
                       <div class="product-meta">
                         <div class="product-price">
                           $110.00
@@ -862,8 +999,142 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
                   </div>
                 </div>
 
-             
-
+     <div class="col-6 col-xl-4">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img src="assets/img/product/garlic.webp" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/garlic2.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                         <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                     
+                    </div>
+                    <div class="product-details">
+                    
+                      <h4 class="product-title"><a href="">DEHYDRATED GARLIC IN WHOLE FORM</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $110.00
+                          <span class="original-price">$129.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(47)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-xl-4">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img src="assets/img/product/garlic.webp" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/garlic2.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                         <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                     
+                    </div>
+                    <div class="product-details">
+                    
+                      <h4 class="product-title"><a href="">GARLIC POWDER DEHYDRATED</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $110.00
+                          <span class="original-price">$129.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(47)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                   <div class="col-6 col-xl-4">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img src="assets/img/product/onion.webp" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/onion.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                         <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                     
+                    </div>
+                    <div class="product-details">
+                    
+                      <h4 class="product-title"><a href=""></a>DEHYDRATED ONION POWDER</h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $110.00
+                          <span class="original-price">$129.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(47)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+   <div class="col-6 col-xl-4">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img src="assets/img/product/amchur.webp" class="main-image img-fluid" alt="Product">
+                      <img src="assets/img/product/amchur.webp" class="hover-image img-fluid" alt="Product Variant">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <!-- <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                            <i class="bi bi-cart-plus"></i>
+                          </button> -->
+                        </div>
+                         <button class="enquire-now-btn">Enquire Now</button>
+                      </div>
+                     
+                    </div>
+                    <div class="product-details">
+                    
+                      <h4 class="product-title"><a href=""></a>MANGO POWDER (AMCHUR)</h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $110.00
+                          <span class="original-price">$129.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(47)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
             </div>
@@ -909,7 +1180,6 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
     </div>
 
   </main>
-
   <footer id="footer" class="footer dark-background">
     <div class="footer-main">
       <div class="container">
@@ -917,10 +1187,9 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
           <div class="col-lg-4 col-md-6">
             <div class="footer-widget footer-about">
               <a href="index.html" class="logo">
-                <span class="sitename">NiceShop</span>
+                <span class="sitename">PKP India Exports</span>
               </a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.</p>
-
+              <p> PKP connects global buyers with premium Indian agricultural produce, handcrafted goods, and engineered products — shipped with precision to Singapore, the US, Australia, and beyond</p>
               <div class="social-links mt-4">
                 <h5>Connect With Us</h5>
                 <div class="social-icons">
@@ -939,12 +1208,11 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
             <div class="footer-widget">
               <h4>Shop</h4>
               <ul class="footer-links">
-                <li><a href="category.html">New Arrivals</a></li>
-                <li><a href="category.html">Bestsellers</a></li>
-                <li><a href="category.html">Women's Clothing</a></li>
-                <li><a href="category.html">Men's Clothing</a></li>
-                <li><a href="category.html">Accessories</a></li>
-                <li><a href="category.html">Sale</a></li>
+                <li><a href="spices.html">Spices</a></li>
+                <li><a href="agro-products.html">Agro Products</a></li>
+                <li><a href="dry-fruits.html">Dry Fruits</a></li>
+                <li><a href="rice.html">Rice</a></li>
+                <li><a href="health.html">Health Products</a></li>
               </ul>
             </div>
           </div>
@@ -953,12 +1221,12 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
             <div class="footer-widget">
               <h4>Support</h4>
               <ul class="footer-links">
-                <li><a href="support.html">Help Center</a></li>
+                <li><a href="support.html">Terms & Conditions</a></li>
                 <li><a href="account.html">Order Status</a></li>
-                <li><a href="shiping-info.html">Shipping Info</a></li>
-                <li><a href="return-policy.html">Returns &amp; Exchanges</a></li>
-                <li><a href="#">Size Guide</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Export Policy</a></li>
+               
               </ul>
             </div>
           </div>
@@ -969,15 +1237,15 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
               <div class="footer-contact">
                 <div class="contact-item">
                   <i class="bi bi-geo-alt"></i>
-                  <span>123 Fashion Street, New York, NY 10001</span>
+                  <span>M 188 A, Sector M, Ashiyana Colony, Near Crticare Hospital, Kanpur road scheme, Lucknow, 226012</span>
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-telephone"></i>
-                  <span>+1 (555) 123-4567</span>
+                  <span>+91 9415787404</span>
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-envelope"></i>
-                  <span>hello@example.com</span>
+                  <span>mail-info@pkpindiaexports.com</span>
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-clock"></i>
@@ -1006,14 +1274,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
         <div class="row gy-3 align-items-center">
           <div class="col-lg-6 col-md-12">
             <div class="copyright">
-              <p>© <span>Copyright</span> <strong class="sitename">NiceShop</strong>. All Rights Reserved.</p>
-            </div>
-            <div class="credits mt-1">
-              <!-- All the links in the footer should remain intact. -->
-              <!-- You can delete the links only if you've purchased the pro version. -->
-              <!-- Licensing information: https://bootstrapmade.com/license/ -->
-              <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              <p>© <span>Copyright</span> <strong class="sitename">PKP India Exports</strong>. All Rights Reserved.</p>
             </div>
           </div>
 
@@ -1094,6 +1355,38 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
 
   <!-- Preloader -->
   <div id="preloader"></div>
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 24px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    background: #1ebd5a;
+  }
+  .whatsapp-float img {
+    width: 28px;
+    height: 28px;
+  }
+</style>
+
+<a href="https://wa.me/919876543210?text=Hello%20PKP%20Global" target="_blank" class="whatsapp-float">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

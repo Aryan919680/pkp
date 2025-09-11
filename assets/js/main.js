@@ -1053,10 +1053,17 @@ document.querySelectorAll(".category-link, .subcategory-link").forEach(link => {
          
   const clone = product.cloneNode(true);
  console.log(clone)
-   const btn = clone.querySelector(".enquire-now-btn");
-          if (btn) {
-            btn.dataset.product = titleElement.textContent.trim();
-          }
+  const btn = clone.querySelector(".enquire-now-btn");
+if (btn) {
+  btn.addEventListener("click", function () {
+    const productTitle = clone.querySelector(".product-title a").textContent.trim();
+    document.getElementById("productName").value = productTitle;
+
+    const inquiryModal = new bootstrap.Modal(document.getElementById("inquiryModal"));
+    inquiryModal.show();
+    console.log("Modal opened for:", productTitle);
+  });
+}
   // Fix lazy-loaded images
 const imgs = clone.querySelectorAll("img");
 imgs.forEach(img => {
