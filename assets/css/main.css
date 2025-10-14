@@ -12717,6 +12717,9 @@ section,
   padding: 12px;
 }
 
+.btn-bg{
+  background: black; border: black;
+}
 
 
 @media (max-width: 575.98px) {

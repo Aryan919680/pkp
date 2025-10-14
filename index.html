@@ -545,98 +545,108 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
 
   <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
+<!-- Hero Section -->
+<section id="hero" class="hero section">
+  <div class="hero-container">
 
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="content-wrapper" data-aos="fade-up" data-aos-delay="100">
-            <h1 class="hero-title">Delivered Across Borders</h1>
-            <p class="hero-description">PKP connects global buyers with premium Indian agricultural produce, handcrafted goods, and engineered products — shipped with precision to Singapore, the US, Australia, and beyond</p>
-            <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
-              <a href="category.html" class="btn-primary" style="background: black; border: black;">Shop Now</a>
-              <a href="category.html" class="btn-secondary">Browse Categories</a>
-            </div>
-            <div class="features-list" data-aos="fade-up" data-aos-delay="300">
-              <div class="feature-item">
-                <i class="bi bi-truck"></i>
-                <span>Global Shipping</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-award"></i>
-                <span>Quality Guarantee</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-headset"></i>
-                <span>24/7 Support</span>
-              </div>
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="content-wrapper" data-aos="fade-up" data-aos-delay="100">
+        <h1 class="hero-title">Delivered Across Borders</h1>
+        <p class="hero-description">
+          PKP connects global buyers with premium Indian agricultural produce, handcrafted goods, and engineered products — shipped with precision to Singapore, the US, Australia, and beyond
+        </p>
+
+        <!-- Hero Actions -->
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+          <a href="category.html" class="btn btn-primary">Shop Now</a>
+          <a href="category.html" class="btn btn-secondary">Browse Categories</a>
+        </div>
+
+        <!-- Features List -->
+        <div class="features-list" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-item"><i class="bi bi-truck"></i><span>Global Shipping</span></div>
+          <div class="feature-item"><i class="bi bi-award"></i><span>Quality Guarantee</span></div>
+          <div class="feature-item"><i class="bi bi-headset"></i><span>24/7 Support</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Visuals -->
+    <div class="hero-visuals">
+      <div class="product-showcase" data-aos="fade-left" data-aos-delay="200">
+
+        <!-- Featured Product -->
+        <div class="product-card featured">
+          <img 
+            src="assets/img/product/hero-top-sell-turmeric.avif"
+            srcset="
+              assets/img/product/hero-top-sell-turmeric.avif 320w,
+              assets/img/product/hero-top-sell-turmeric.avif 640w,
+              assets/img/product/hero-top-sell-turmeric.avif 1280w"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="Featured Product"
+            class="img-fluid"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="product-badge">Best Seller</div>
+          <div class="product-info">
+            <h4>Premium Indian Spices</h4>
+            <div class="price">
+              <span class="sale-price">$299</span>
+              <span class="original-price">$399</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-visuals">
-          <div class="product-showcase" data-aos="fade-left" data-aos-delay="200">
-            <div class="product-card featured">
-             <img 
-  src="assets/img/product/hero-top-sell-turmeric.avif"
-  srcset="
-    assets/img/product/hero-top-sell-turmeric.avif 320w,
-    assets/img/product/hero-top-sell-turmeric.avif 640w,
-    assets/img/product/hero-top-sell-turmeric.avif 1280w"
-  sizes="(max-width: 768px) 100vw, 50vw"
-  alt="Featured Product"
-  class="img-fluid"
-  fetchpriority="high"
-  decoding="async"
-/>
-
-              <div class="product-badge">Best Seller</div>
-              <div class="product-info">
-                <h4>Premium Indian Spices</h4>
-                <div class="price">
-                  <span class="sale-price">$299</span>
-                  <span class="original-price">$399</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="product-grid">
-              <div class="product-mini" data-aos="zoom-in" data-aos-delay="400">
-              <img 
-  src="assets/img/product/hero-cardamom.avif"
-  srcset="assets/img/product/hero-cardamom.avif 160w, assets/img/product/hero-cardamom.avif 320w, assets/img/product/hero-cardamom.avif 640w"
-  sizes="(max-width: 768px) 50vw, 25vw"
-  loading="lazy"
-  decoding="async"
-  alt="Cardamom"
-  class="img-fluid"
-/>
-
-                <span class="mini-price">Cardamom</span>
-              </div>
-              <div class="product-mini" data-aos="zoom-in" data-aos-delay="500">
-                <img src="assets/img/product/hero-dalchini.avif" alt="Product" class="img-fluid">
-                <span class="mini-price">Cinnamon</span>
-              </div>
-            </div>
+        <!-- Mini Products -->
+        <div class="product-grid">
+          <div class="product-mini" data-aos="zoom-in" data-aos-delay="400">
+            <img 
+              src="assets/img/product/hero-cardamom.avif"
+              srcset="assets/img/product/hero-cardamom.avif 160w, assets/img/product/hero-cardamom.avif 320w, assets/img/product/hero-cardamom.avif 640w"
+              sizes="(max-width: 768px) 50vw, 25vw"
+              alt="Cardamom"
+              class="img-fluid"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="mini-price">Cardamom</span>
           </div>
-
-          <div class="floating-elements">
-            <div class="floating-icon cart" data-aos="fade-up" data-aos-delay="600">
-              <i class="bi bi-cart3"></i>
-              <span class="notification-dot">3</span>
-            </div>
-            <div class="floating-icon wishlist" data-aos="fade-up" data-aos-delay="700">
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="floating-icon search" data-aos="fade-up" data-aos-delay="800">
-              <i class="bi bi-search"></i>
-            </div>
+          <div class="product-mini" data-aos="zoom-in" data-aos-delay="500">
+            <img 
+              src="assets/img/product/hero-dalchini.avif"
+              alt="Cinnamon"
+              class="img-fluid"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="mini-price">Cinnamon</span>
           </div>
+        </div>
+
+      </div>
+
+      <!-- Floating Icons -->
+      <div class="floating-elements">
+        <div class="floating-icon cart" data-aos="fade-up" data-aos-delay="600">
+          <i class="bi bi-cart3"></i>
+          <span class="notification-dot">3</span>
+        </div>
+        <div class="floating-icon wishlist" data-aos="fade-up" data-aos-delay="700">
+          <i class="bi bi-heart"></i>
+        </div>
+        <div class="floating-icon search" data-aos="fade-up" data-aos-delay="800">
+          <i class="bi bi-search"></i>
         </div>
       </div>
 
-    </section><!-- /Hero Section -->
+    </div>
+  </div>
+</section>
+
 
     <!-- Promo Cards Section -->
     <section id="promo-cards" class="promo-cards section">
@@ -646,7 +656,13 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
           <div class="col-lg-6">
             <div class="category-featured" data-aos="fade-right" data-aos-delay="200">
               <div class="category-image">
-                <img src="assets/img/product/cover-agricultural-produce..jpg" alt="Women's Collection" class="img-fluid">
+               <img 
+              src="assets/img/product/cover-agricultural-produce..jpg" 
+              alt="Agricultural Produce" 
+              class="img-fluid" 
+              loading="lazy" 
+              decoding="async"
+            />
               </div>
               <div class="category-content">
                 <span class="category-tag">Most Exported</span>
@@ -664,7 +680,13 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
               <div class="col-xl-6">
                 <div class="category-card cat-men" data-aos="fade-up" data-aos-delay="300">
                   <div class="category-image">
-                    <img src="assets/img/product/cover-spices.jpg" alt="Men's Fashion" class="img-fluid">
+                     <img 
+                  src="assets/img/product/cover-spices.jpg" 
+                  alt="Spices" 
+                  class="img-fluid" 
+                  loading="lazy" 
+                  decoding="async"
+                />
                   </div>
                   <div class="category-content">
                     <h4>Spices</h4>
@@ -677,7 +699,13 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
               <div class="col-xl-6">
                 <div class="category-card cat-kids" data-aos="fade-up" data-aos-delay="400">
                   <div class="category-image">
-                    <img src="assets/img/product/dryfruits.jpg" alt="Kid's Fashion" class="img-fluid">
+                   <img 
+                  src="assets/img/product/dryfruits.jpg" 
+                  alt="Dry Fruits" 
+                  class="img-fluid" 
+                  loading="lazy" 
+                  decoding="async"
+                />
                   </div>
                   <div class="category-content">
                     <h4>Dry Fruits</h4>
@@ -690,7 +718,13 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
               <div class="col-xl-6">
                 <div class="category-card cat-cosmetics" data-aos="fade-up" data-aos-delay="500">
                   <div class="category-image">
-                    <img src="assets/img/product/rice.avif" alt="Rice" class="img-fluid">
+                     <img 
+                  src="assets/img/product/rice.avif" 
+                  alt="Rice" 
+                  class="img-fluid" 
+                  loading="lazy" 
+                  decoding="async"
+                />
                   </div>
                   <div class="category-content">
                     <h4>Rice</h4>
@@ -703,7 +737,13 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
               <div class="col-xl-6">
                 <div class="category-card cat-accessories" data-aos="fade-up" data-aos-delay="600">
                   <div class="category-image">
-                    <img src="assets/img/product/amla.avif" alt="Accessories" class="img-fluid">
+                   <img 
+                  src="assets/img/product/amla.avif" 
+                  alt="Health Products" 
+                  class="img-fluid" 
+                  loading="lazy" 
+                  decoding="async"
+                />
                   </div>
                   <div class="category-content">
                     <h4>Health Products</h4>
@@ -730,8 +770,7 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
     <p>Top export-ready ingredients and produce trusted by buyers in Singapore, USA & Australia</p>
   </div><!-- End Section Title -->
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row g-5">
 
       <!-- Product 1: Turmeric -->
@@ -739,24 +778,18 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
         <div class="product-item">
           <div class="product-image">
             <div class="product-badge">Export Bestseller</div>
-            <!-- replace src with your actual turmeric image -->
-            <img src="assets/img/product/best-seller-Turmeric.png" alt="Premium Turmeric Powder" class="img-fluid" loading="lazy">
-            <!-- <div class="product-actions">
-              <button class="action-btn wishlist-btn">
-                <i class="bi bi-heart"></i>
-              </button>
-              <button class="action-btn compare-btn">
-                <i class="bi bi-arrow-left-right"></i>
-              </button>
-              <button class="action-btn quickview-btn">
-                <i class="bi bi-zoom-in"></i>
-              </button>
-            </div> -->
+            <img src="assets/img/product/best-seller-Turmeric.png" 
+                 alt="Premium Turmeric Powder" 
+                 class="img-fluid" 
+                 loading="lazy" 
+                 decoding="async">
             <button class="cart-btn request-sample">Request Sample</button>
           </div>
           <div class="product-info">
             <div class="product-category">Spices — Turmeric</div>
-            <h4 class="product-name"><a href="product-details.html">Premium Turmeric Powder (High Curcumin)</a></h4>
+            <h4 class="product-name">
+              <a href="product-details.html">Premium Turmeric Powder (High Curcumin)</a>
+            </h4>
             <div class="product-rating">
               <div class="stars">
                 <i class="bi bi-star-fill"></i>
@@ -775,31 +808,24 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
           </div>
         </div>
       </div>
-      <!-- End Product 1 -->
 
       <!-- Product 2: Cardamom -->
       <div class="col-lg-3 col-md-6">
         <div class="product-item">
           <div class="product-image">
             <div class="product-badge sale-badge">Most Popular — USA</div>
-            <!-- replace src with your actual cardamom image -->
-            <img src="assets/img/product/best-selling-Green-Cardamom.png" alt="Green Cardamom Pods" class="img-fluid" loading="lazy">
-            <!-- <div class="product-actions">
-              <button class="action-btn wishlist-btn">
-                <i class="bi bi-heart"></i>
-              </button>
-              <button class="action-btn compare-btn">
-                <i class="bi bi-arrow-left-right"></i>
-              </button>
-              <button class="action-btn quickview-btn">
-                <i class="bi bi-zoom-in"></i>
-              </button>
-            </div> -->
+            <img src="assets/img/product/best-selling-Green-Cardamom.png" 
+                 alt="Green Cardamom Pods" 
+                 class="img-fluid" 
+                 loading="lazy" 
+                 decoding="async">
             <button class="cart-btn request-sample">Request Sample</button>
           </div>
           <div class="product-info">
             <div class="product-category">Spices — Cardamom</div>
-            <h4 class="product-name"><a href="product-details.html">Green Cardamom Pods (Aromatic Grade)</a></h4>
+            <h4 class="product-name">
+              <a href="product-details.html">Green Cardamom Pods (Aromatic Grade)</a>
+            </h4>
             <div class="product-rating">
               <div class="stars">
                 <i class="bi bi-star-fill"></i>
@@ -818,30 +844,23 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
           </div>
         </div>
       </div>
-      <!-- End Product 2 -->
 
       <!-- Product 3: Cumin -->
       <div class="col-lg-3 col-md-6">
         <div class="product-item">
           <div class="product-image">
-            <!-- no badge for this one to show variety -->
-            <img src="assets/img/product/best-seller-cumin-seeds.png" alt="Cumin Seeds Export Grade" class="img-fluid" loading="lazy">
-            <!-- <div class="product-actions"> -->
-              <!-- <button class="action-btn wishlist-btn">
-                <i class="bi bi-heart"></i>
-              </button>
-              <button class="action-btn compare-btn">
-                <i class="bi bi-arrow-left-right"></i>
-              </button>
-              <button class="action-btn quickview-btn">
-                <i class="bi bi-zoom-in"></i>
-              </button>
-            </div> -->
+            <img src="assets/img/product/best-seller-cumin-seeds.png" 
+                 alt="Cumin Seeds Export Grade" 
+                 class="img-fluid" 
+                 loading="lazy" 
+                 decoding="async">
             <button class="cart-btn request-sample">Request Sample</button>
           </div>
           <div class="product-info">
             <div class="product-category">Spices — Cumin</div>
-            <h4 class="product-name"><a href="product-details.html">Cumin Seeds — Cleaned Export Grade</a></h4>
+            <h4 class="product-name">
+              <a href="product-details.html">Cumin Seeds — Cleaned Export Grade</a>
+            </h4>
             <div class="product-rating">
               <div class="stars">
                 <i class="bi bi-star-fill"></i>
@@ -860,31 +879,22 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
           </div>
         </div>
       </div>
-      <!-- End Product 3 -->
 
-      <!-- Product 4: Cashew Kernels -->
+      <!-- Product 4: Indian Gooseberry (Amla) -->
       <div class="col-lg-3 col-md-6">
         <div class="product-item">
           <div class="product-image">
             <div class="product-badge trending-badge">Top Seller — Australia</div>
-            <!-- replace src with your actual cashew image -->
-            <img src="assets/img/product/amla.avif" alt="Indian Gooseberry" class="img-fluid" loading="lazy">
-            <!-- <div class="product-actions">
-              <button class="action-btn wishlist-btn active">
-                <i class="bi bi-heart-fill"></i>
-              </button>
-              <button class="action-btn compare-btn">
-                <i class="bi bi-arrow-left-right"></i>
-              </button>
-              <button class="action-btn quickview-btn">
-                <i class="bi bi-zoom-in"></i>
-              </button>
-            </div> -->
+            <img src="assets/img/product/amla.avif" 
+                 alt="Indian Gooseberry" 
+                 class="img-fluid" 
+                 loading="lazy" 
+                 decoding="async">
             <button class="cart-btn request-sample">Request Sample</button>
           </div>
           <div class="product-info">
-            <div class="product-category">Agro Product — Indian Gooseberry(Amla)</div>
-            <h4 class="product-name"><a href="">Indian Gooseberry(Premium)</a></h4>
+            <div class="product-category">Agro Product — Indian Gooseberry (Amla)</div>
+            <h4 class="product-name"><a href="#">Indian Gooseberry (Premium)</a></h4>
             <div class="product-rating">
               <div class="stars">
                 <i class="bi bi-star-fill"></i>
@@ -903,10 +913,8 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
           </div>
         </div>
       </div>
-      <!-- End Product 4 -->
 
     </div>
-
   </div>
 
 </section><!-- /Best Sellers Section -->
@@ -1540,12 +1548,12 @@ const searchInputIndex = document.querySelector(".productSearchIndex");
               <div class="social-links mt-4">
                 <h5>Connect With Us</h5>
                 <div class="social-icons">
-                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.facebook.com/share/1cPccAazVn/" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/pkpindiaexports?utm_source=qr&igsh=MWppMzZxZ2poOHkxMA==" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                   <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
                   <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
                   <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
-                  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                  <a href="https://youtube.com/@pkpinternationalexports?si=FyZF_8Z7Wu-OR_iP" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
                 </div>
               </div>
             </div>
